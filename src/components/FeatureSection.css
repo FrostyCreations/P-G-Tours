@@ -51,6 +51,15 @@
   left: 0;
 }
 
+.feature-image-wrapper.contain {
+  background: white; /* Clean background for contained images */
+}
+
+.feature-image-wrapper.contain .feature-image {
+  object-fit: contain;
+  padding: 20px; /* Optional padding so it doesn't touch the very edges */
+}
+
 /* Added styling for the image placeholder to look premium */
 .feature-placeholder-image {
   width: 100%;

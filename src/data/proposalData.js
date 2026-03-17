@@ -60,6 +60,7 @@ export const proposalData = {
         title: "Establishing the Aesthetic",
         description: "A strong brand identity ensures PNG Tours presents a consistent and professional image across all marketing channels. We recommend positioning the brand with the 'Explorer' as the primary archetype and 'Jester' as the secondary. This keeps the travel and adventure elements strong, while the Jester supports the fun and energetic personality the owners naturally bring. This avoids placing the brand in a highly competitive luxury positioning too early, opting instead for authentic and relatable engagement.",
         imagePosition: 'right',
+        imageStyle: 'contain',
         imageUrl: "https://iconicfox.com.au/wp-content/uploads/2018/05/iconic-fox-Atchetypes-12-jungian-map.jpg"
       }
     },
