@@ -1,0 +1,166 @@
+.summary-section {
+  background: var(--bg-color);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: var(--nav-height) 0 80px;
+}
+
+.summary-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+/* Visuals (Left Side) Mimicking Slide 2 */
+.summary-visuals {
+  position: relative;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.visual-circle-large {
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  background: var(--bg-secondary);
+  border: 4px solid var(--border-color);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.floating-badge {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 60px;
+  height: 60px;
+  background: #1a1a1a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.visual-circle-small {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  right: -20px;
+  border: 12px solid var(--accent-primary);
+  background: var(--bg-secondary);
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  z-index: 5;
+}
+
+/* Placeholders acting as images */
+.image-placeholder {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-blue {
+  background-color: var(--text-muted);
+  opacity: 0.1;
+}
+
+.bg-gray {
+  background-color: var(--text-secondary);
+  opacity: 0.2;
+}
+
+/* Content (Right Side) */
+.summary-content {
+  padding-left: 20px;
+}
+
+.summary-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+.summary-text p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.summary-footer {
+  margin-top: 40px;
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+}
+
+.presented-by {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.05em;
+}
+
+.decorative-lines {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border: 20px solid #1a1a1a;
+  border-radius: 50%;
+  border-left-color: transparent;
+  border-top-color: transparent;
+  transform: rotate(45deg);
+}
+
+.bottom-right {
+  bottom: -50px;
+  right: -50px;
+}
+
+@media (max-width: 1024px) {
+  .summary-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .summary-content {
+    padding-left: 0;
+  }
+  
+  .summary-footer {
+    position: relative;
+    bottom: auto;
+    margin-top: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .visual-circle-large {
+    width: 300px;
+    height: 300px;
+  }
+  .visual-circle-small {
+    width: 200px;
+    height: 200px;
+  }
+  .summary-title {
+    font-size: 2.5rem;
+  }
+}
