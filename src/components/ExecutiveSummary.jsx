@@ -15,41 +15,81 @@ const ExecutiveSummary = ({ data, agencyName }) => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
         >
-          <div className="visual-circle-large glass-panel">
+          {/* Decorative thin circular ring */}
+          <div className="visual-ring"></div>
+          
+          {/* Primary square image container */}
+          <div className="visual-square">
              <div className="floating-badge">
-               <Rocket size={24} color="#fff" />
+               <Rocket size={18} color="#fff" />
              </div>
-             {/* Using placeholders for the specific photos they had, but framing them like the slide */}
-             <div className="image-placeholder bg-blue"></div>
+             {data.image1 ? (
+               <img src={data.image1} alt="Introduction Visual" className="intro-image-main" />
+             ) : (
+               <div className="image-placeholder bg-light-gray"></div>
+             )}
           </div>
+          
+          {/* Secondary circular image overlapping */}
           <motion.div 
-            className="visual-circle-small glass-panel"
+            className="visual-circle-accent"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.6 }}
           >
-             <div className="image-placeholder bg-gray"></div>
+             {data.image2 ? (
+               <img src={data.image2} alt="Introduction Detail" className="intro-image-accent" />
+             ) : (
+               <div className="placeholder-inner-square bg-gray-solid"></div>
+             )}
           </motion.div>
         </motion.div>
 
         {/* Right Side: Content */}
         <motion.div 
           className="summary-content"
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial="hidden"
+          whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.2, // Stagger effect for children elements
+              }
+            }
+          }}
         >
-          <h2 className="section-title summary-title">{data.title}</h2>
+          <motion.h2 
+            className="section-title summary-title"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+            }}
+          >
+            {data.title}
+          </motion.h2>
           
-          <div className="summary-text">
+          <motion.div 
+            className="summary-text"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+            }}
+          >
             <p>{data.content}</p>
-          </div>
+          </motion.div>
 
-          <div className="summary-footer">
+          <motion.div 
+            className="summary-footer"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+            }}
+          >
             <span className="presented-by">Presented by {agencyName}</span>
-          </div>
+          </motion.div>
         </motion.div>
 
       </div>

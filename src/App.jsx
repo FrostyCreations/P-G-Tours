@@ -15,6 +15,7 @@ import AISearch from './components/AISearch'
 import NewsletterStrategy from './components/NewsletterStrategy'
 import FinalCTA from './components/FinalCTA'
 import FeatureSection from './components/FeatureSection'
+import AboutCompany from './components/AboutCompany'
 import './index.css'
 
 const ComponentMap = {
@@ -29,7 +30,8 @@ const ComponentMap = {
   AISearch,
   NewsletterStrategy,
   FinalCTA,
-  FeatureSection
+  FeatureSection,
+  AboutCompany
 };
 
 function App() {
@@ -58,7 +60,7 @@ function App() {
         <div className="nav-container">
           <a href="#home" className="logo" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             {proposalData.client.logoUrl ? (
-              <img src={proposalData.client.logoUrl} alt={proposalData.client.name} style={{ height: '48px', objectFit: 'contain' }} />
+              <img src={proposalData.client.logoUrl} alt={proposalData.client.name} style={{ height: '100px', objectFit: 'contain' }} />
             ) : (
               <>
                 <div style={{

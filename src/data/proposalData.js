@@ -1,11 +1,14 @@
 // Generalized data architecture 
 // Easily swap out the whole 'sections' array for any new client layout
 
+import brandLaunchImg from '../assets/pexels-photo-1450360.jpeg';
+import logoImg from '../assets/PG Tour.png';
+
 export const proposalData = {
   client: {
     name: "P&G Tours",
     logoText: "P&G",
-    logoUrl: "" // Add the path to the logo image here (e.g. "/logo.jpg") if placed in the public folder
+    logoUrl: logoImg
   },
   agency: {
     name: "Big On Digital",
@@ -22,7 +25,9 @@ export const proposalData = {
       id: "intro",
       data: {
         title: "1. Introduction",
-        content: "PNG Tours is a new travel brand with the advantage of owning its own lodge in Mozambique and operating dedicated shuttle transport. This creates a strong foundation for curated travel experiences designed for South African travellers seeking coastal escapes and unique holiday experiences. The objective of this proposal is to launch PNG Tours professionally, position the lodge as a desirable destination, and create the marketing infrastructure required to generate consistent tour enquiries. The initial focus will be Mozambique lodge packages, allowing the brand to establish credibility and operational momentum before expanding into additional tours across Southern Africa."
+        content: "PNG Tours is a new travel brand with the advantage of owning its own lodge in Mozambique and operating dedicated shuttle transport. This creates a strong foundation for curated travel experiences designed for South African travellers seeking coastal escapes and unique holiday experiences. The objective of this proposal is to launch PNG Tours professionally, position the lodge as a desirable destination, and create the marketing infrastructure required to generate consistent tour enquiries. The initial focus will be Mozambique lodge packages, allowing the brand to establish credibility and operational momentum before expanding into additional tours across Southern Africa.",
+        image1: "https://images.pexels.com/photos/338504/pexels-photo-338504.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2", // Resort/Hotel overview
+        image2: "https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"  // Close up resort detail
       }
     },
     {
@@ -44,7 +49,7 @@ export const proposalData = {
         title: "Brand Launch & Digital Foundations",
         description: "This phase focuses on establishing the brand and generating enquiries. We will build the identity, website, content structure and marketing channels required to begin generating robust leads.",
         imagePosition: 'left',
-        imageUrl: "https://images.unsplash.com/photo-1516483638261-f40af5edca87?q=80&w=1968&auto=format&fit=crop" // Replaced broken image with Lodge
+        imageUrl: brandLaunchImg // Tropical beach view
       }
     },
     {
@@ -201,6 +206,23 @@ export const proposalData = {
           "Email marketing funnels & Automation",
           "WhatsApp enquiry automation"
         ]
+      }
+    },
+    {
+      type: 'AboutCompany',
+      id: "about",
+      data: {
+        title: "ABOUT BIG ON DIGITAL",
+        member1Image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=256&h=256&auto=format&fit=crop", // Placeholder Francois image
+        member1Name: "Francois Theron",
+        member2Image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=256&h=256&auto=format&fit=crop", // Placeholder Dominique image
+        member2Name: "Dominique Munro",
+        paragraphs: [
+          "Big On Digital is a boutique digital marketing agency offering expert, end-to-end marketing services to both small businesses and large corporations. With over two decades of combined industry experience, our team specialises in social media, branding, web development, and digital strategy that help clients grow their reach and strengthen their brand presence.",
+          "We believe in the power of creativity, strategy, and innovation to transform businesses. Every project is approached with purpose and precision, combining design, technology, and storytelling to deliver meaningful results.",
+          "Our team brings a dynamic mix of talent and insight, ensuring each brand we work with receives customised, high-impact digital solutions that drive measurable success."
+        ],
+        footerText: "At Big On Digital, we don't just build brands, we bring visions to life."
       }
     },
     {
