@@ -6,6 +6,7 @@
   position: relative;
   overflow: hidden;
   padding: var(--nav-height) 0 80px;
+  border-top: 1px solid var(--border-color);
 }
 
 .summary-container {
@@ -29,8 +30,8 @@
 
 .visual-ring {
   position: absolute;
-  width: 440px;
-  height: 440px;
+  width: 400px;
+  height: 400px;
   border-radius: 50%;
   border: 2px solid #f1e4cd; /* Light gold thin ring */
   top: 50%;
@@ -41,8 +42,8 @@
 
 .visual-square {
   position: relative;
-  width: 320px;
-  height: 320px;
+  width: 280px;
+  height: 280px;
   z-index: 2;
   box-shadow: 0 10px 40px rgba(0,0,0,0.05);
 }
@@ -72,9 +73,9 @@
 .visual-circle-accent {
   position: absolute;
   bottom: 0px;
-  right: -10px;
-  width: 220px;
-  height: 220px;
+  right: -20px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   border: 8px solid #c9933b; /* Thick gold border matching design */
   background: white;

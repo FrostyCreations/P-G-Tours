@@ -12,7 +12,9 @@ const FeatureSection = ({ data }) => {
         <div 
           className={`feature-grid ${isReversed ? 'reversed' : ''}`}
           style={{
-            gridTemplateColumns: data.splitRatio ? (isReversed ? `${data.splitRatio}% ${100 - data.splitRatio}%` : `${100 - data.splitRatio}% ${data.splitRatio}%`) : '1fr 1fr'
+            gridTemplateColumns: data.splitRatio 
+              ? (isReversed ? `${100 - data.splitRatio}% ${data.splitRatio}%` : `${100 - data.splitRatio}% ${data.splitRatio}%`) 
+              : (isReversed ? '1fr 1.4fr' : '1fr 1.4fr')
           }}
         >
           

@@ -10,7 +10,7 @@ const ExecutiveSummary = ({ data, agencyName }) => {
       <div 
         className="container summary-container"
         style={{
-          gridTemplateColumns: data.splitRatio ? `${100 - data.splitRatio}% ${data.splitRatio}%` : '1.2fr 0.8fr'
+          gridTemplateColumns: data.splitRatio ? `${100 - data.splitRatio}% ${data.splitRatio}%` : '1fr 1.5fr'
         }}
       >
         
