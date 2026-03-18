@@ -31,6 +31,21 @@ const PerformanceOverview = ({ data }) => {
                 </div>
              ))}
            </div>
+
+           {data.price && (
+             <div className="pricing-block">
+               <div className="pricing-info">
+                 <span className="pricing-label">Price:</span>
+                 <span className="pricing-value">{data.price}</span>
+               </div>
+               {data.quoteUrl && (
+                 <a href={data.quoteUrl} target="_blank" rel="noopener noreferrer" className="btn-primary">
+                   View Quote
+                 </a>
+               )}
+             </div>
+           )}
+
          </motion.div>
          
          {/* Decorative striped circle in bottom right like the slide */}

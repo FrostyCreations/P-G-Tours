@@ -128,7 +128,8 @@
 
 @media (max-width: 1024px) {
   .feature-grid, .feature-grid.reversed {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column-reverse;
     gap: 50px;
     direction: ltr; /* Reset direction for mobile */
   }
@@ -139,5 +140,6 @@
   
   .feature-image-wrapper {
     min-height: 350px;
+    width: 100%;
   }
 }

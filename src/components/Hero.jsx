@@ -6,7 +6,17 @@ const Hero = ({ data }) => {
   return (
     <section id="home" className="hero-section">
       {/* Background Elements */}
-      <div className="glow-orb orb-1"></div>
+      <div className="glow-orb orb-1">
+        <video 
+          className="hero-video" 
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+        >
+          <source src={data.heroVideoUrl || "https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-a-tropical-beach-140-large.mp4"} type="video/mp4" />
+        </video>
+      </div>
       
       <div className="hero-container container">
         <motion.div

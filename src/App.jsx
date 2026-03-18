@@ -49,7 +49,7 @@ function App() {
   const navLinks = [
     { name: 'Introduction', href: '#intro' },
     { name: 'Strategy', href: '#strategy' },
-    { name: 'Phase 1', href: '#phase1' },
+    { name: 'Phase 1', href: '#phase1-header' },
     { name: 'Phase 2', href: '#phase2' }
   ]
 

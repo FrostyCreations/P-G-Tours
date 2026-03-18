@@ -20,7 +20,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  padding: 80px 10%;
+  padding: 80px 15% 80px 10%;
   color: #fff;
   z-index: 1;
 }
@@ -31,7 +31,7 @@
   position: absolute;
   top: -20%;
   bottom: -20%;
-  left: -250px; /* Pushes the curve into the left image */
+  left: -120px; /* Moves the curve slightly to the right */
   width: 500px;
   background: var(--accent-primary);
   border-radius: 50%;

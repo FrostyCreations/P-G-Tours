@@ -14,7 +14,7 @@ const FeatureSection = ({ data }) => {
             className="feature-visual"
             initial={{ opacity: 0, x: isReversed ? 30 : -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.8 }}
           >
             <div className={`feature-image-wrapper ${data.imageStyle || 'standard'}`}>
@@ -34,7 +34,7 @@ const FeatureSection = ({ data }) => {
             className="feature-content"
             initial={{ opacity: 0, x: isReversed ? -30 : 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             {data.eyebrow && <span className="feature-eyebrow">{data.eyebrow}</span>}
@@ -42,6 +42,20 @@ const FeatureSection = ({ data }) => {
             <div className="feature-text">
               <p>{data.description}</p>
             </div>
+            
+            {data.price && (
+              <div className="pricing-block">
+                <div className="pricing-info">
+                  <span className="pricing-label">Price:</span>
+                  <span className="pricing-value">{data.price}</span>
+                </div>
+                {data.quoteUrl && (
+                  <a href={data.quoteUrl} target="_blank" rel="noopener noreferrer" className="btn-primary">
+                    View Quote
+                  </a>
+                )}
+              </div>
+            )}
           </motion.div>
 
         </div>

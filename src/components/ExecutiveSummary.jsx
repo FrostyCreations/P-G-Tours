@@ -12,7 +12,7 @@ const ExecutiveSummary = ({ data, agencyName }) => {
           className="summary-visuals"
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.8 }}
         >
           {/* Decorative thin circular ring */}
@@ -51,7 +51,7 @@ const ExecutiveSummary = ({ data, agencyName }) => {
           className="summary-content"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
+          viewport={{ once: true, amount: 0.1 }}
           variants={{
             hidden: {},
             visible: {
@@ -81,15 +81,26 @@ const ExecutiveSummary = ({ data, agencyName }) => {
             <p>{data.content}</p>
           </motion.div>
 
-          <motion.div 
-            className="summary-footer"
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
-            }}
-          >
-            <span className="presented-by">Presented by {agencyName}</span>
-          </motion.div>
+          {data.price && (
+            <motion.div 
+              className="pricing-block"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+              }}
+            >
+              <div className="pricing-info">
+                <span className="pricing-label">Price:</span>
+                <span className="pricing-value">{data.price}</span>
+              </div>
+              {data.quoteUrl && (
+                <a href={data.quoteUrl} target="_blank" rel="noopener noreferrer" className="btn-primary">
+                  View Quote
+                </a>
+              )}
+            </motion.div>
+          )}
+
         </motion.div>
 
       </div>

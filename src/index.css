@@ -6,16 +6,17 @@
   --bg-secondary: #fdfbf7; /* Very light cream/gold */
   --bg-tertiary: #f4efdf;
   
-  --text-primary: #1e293b; 
+  --text-primary: #003747; 
   --text-secondary: #475569; 
   --text-muted: #94a3b8;
   
-  --accent-primary: #C49A45; /* P&G Gold */
-  --accent-secondary: #a8843a; /* Darker Gold */
+  --accent-primary: #d5c8a6; /* Sand Beige (New Primary) */
+  --accent-secondary: #C49A45; /* P&G Gold (Moved to secondary/accent) */
+  --accent-tertiary: #003747; /* Deep Teal Accent */
   --accent-gradient: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-  --accent-glow: rgba(196, 154, 69, 0.15);
+  --accent-glow: rgba(213, 200, 166, 0.35);
 
-  --border-color: rgba(196, 154, 69, 0.2);
+  --border-color: rgba(213, 200, 166, 0.4);
   --border-highlight: rgba(196, 154, 69, 0.4);
 
   /* Typography */
@@ -50,7 +51,11 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.app-container {
   overflow-x: hidden;
+  max-width: 100vw;
 }
 
 /* Typography Base */
@@ -267,5 +272,41 @@ ul {
 .mobile-cta {
   margin-top: 16px;
   width: 100%;
+}
+
+/* Pricing Block Constraints */
+.pricing-block {
+  margin-top: 30px;
+  padding: 24px;
+  background-color: var(--bg-tertiary);
+  border-left: 4px solid var(--accent-primary);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.pricing-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pricing-label {
+  font-weight: 700;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.pricing-value {
+  font-weight: 900;
+  font-size: 1.8rem;
+  color: var(--accent-secondary);
+}
+
+.pricing-block .btn-primary {
+  align-self: flex-start;
+  padding: 12px 24px;
+  font-size: 0.95rem;
 }
 

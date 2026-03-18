@@ -162,7 +162,9 @@
 
 @media (max-width: 1024px) {
   .summary-container {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 60px;
     text-align: center;
   }
   
