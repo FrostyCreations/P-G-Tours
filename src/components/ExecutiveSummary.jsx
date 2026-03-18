@@ -3,22 +3,27 @@ import { Rocket } from 'lucide-react';
 import './ExecutiveSummary.css';
 
 const ExecutiveSummary = ({ data, agencyName }) => {
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
+
   return (
     <section id="summary" className="section summary-section">
-      <div className="container summary-container">
+      <div 
+        className="container summary-container"
+        style={{
+          gridTemplateColumns: data.splitRatio ? `${100 - data.splitRatio}% ${data.splitRatio}%` : '1.2fr 0.8fr'
+        }}
+      >
         
-        {/* Left Side: Images & Visuals reflecting the WorkPods proposal style */}
+        {/* Left Side: Images & Visuals */}
         <motion.div 
           className="summary-visuals"
-          initial={{ opacity: 0, x: -30 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={isMobile ? {} : { opacity: 0, x: -30 }}
+          whileInView={isMobile ? {} : { opacity: 1, x: 0 }}
           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.8 }}
         >
-          {/* Decorative thin circular ring */}
           <div className="visual-ring"></div>
           
-          {/* Primary square image container */}
           <div className="visual-square">
              <div className="floating-badge">
                <Rocket size={18} color="#fff" />
@@ -30,11 +35,10 @@ const ExecutiveSummary = ({ data, agencyName }) => {
              )}
           </div>
           
-          {/* Secondary circular image overlapping */}
           <motion.div 
             className="visual-circle-accent"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={isMobile ? {} : { opacity: 0, scale: 0.8 }}
+            whileInView={isMobile ? {} : { opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.6 }}
           >
@@ -49,16 +53,12 @@ const ExecutiveSummary = ({ data, agencyName }) => {
         {/* Right Side: Content */}
         <motion.div 
           className="summary-content"
-          initial="hidden"
-          whileInView="visible"
+          initial={isMobile ? {} : "hidden"}
+          whileInView={isMobile ? {} : "visible"}
           viewport={{ once: true, amount: 0.1 }}
           variants={{
             hidden: {},
-            visible: {
-              transition: {
-                staggerChildren: 0.2, // Stagger effect for children elements
-              }
-            }
+            visible: { transition: { staggerChildren: 0.2 } }
           }}
         >
           <motion.h2 
@@ -73,12 +73,13 @@ const ExecutiveSummary = ({ data, agencyName }) => {
           
           <motion.div 
             className="summary-text"
+            style={{ lineHeight: data.lineHeight || '1.8' }}
             variants={{
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
             }}
           >
-            <p>{data.content}</p>
+            <p style={{ lineHeight: 'inherit' }}>{data.content}</p>
           </motion.div>
 
           {data.price && (
@@ -105,7 +106,6 @@ const ExecutiveSummary = ({ data, agencyName }) => {
 
       </div>
       
-      {/* Decorative corner lines mimicking the proposal slide */}
       <div className="decorative-lines bottom-right"></div>
     </section>
   );

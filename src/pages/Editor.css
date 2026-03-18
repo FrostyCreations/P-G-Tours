@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+/* ─── Layout ─────────────────────────────────────── */
+.editor-page {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  background: #0d1117;
+  color: #e6edf3;
+}
+
+/* ─── Sidebar ─────────────────────────────────────── */
+.editor-sidebar {
+  width: 380px;
+  min-width: 320px;
+  max-width: 420px;
+  height: 100vh;
+  overflow-y: auto;
+  background: #161b22;
+  border-right: 1px solid #30363d;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.editor-sidebar-header {
+  padding: 24px 20px 16px;
+  border-bottom: 1px solid #30363d;
+  background: #1c2128;
+}
+
+.editor-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #8b949e;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  margin-bottom: 12px;
+  transition: color 0.2s;
+}
+.editor-back-btn:hover { color: #e6edf3; }
+
+.editor-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #e6edf3;
+  margin-bottom: 4px;
+}
+
+.editor-subtitle {
+  font-size: 0.82rem;
+  color: #8b949e;
+  font-weight: 400;
+}
+
+.editor-group-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #8b949e;
+  padding: 16px 20px 8px;
+}
+
+/* ─── Global Fields ───────────────────────────────── */
+.editor-global {
+  border-bottom: 1px solid #30363d;
+  padding-bottom: 8px;
+}
+
+/* ─── Section Items ───────────────────────────────── */
+.editor-sections-list {
+  flex: 1;
+  border-bottom: 1px solid #30363d;
+  padding-bottom: 8px;
+}
+
+.editor-section {
+  border-bottom: 1px solid #21262d;
+}
+
+.editor-section-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s;
+  color: #e6edf3;
+}
+.editor-section-header:hover { background: #1c2128; }
+
+.editor-section-label {
+  flex: 1;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #e6edf3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.editor-section-type {
+  font-size: 0.7rem;
+  color: #8b949e;
+  background: #21262d;
+  padding: 2px 8px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.editor-section-body {
+  padding: 8px 20px 16px;
+  background: #0d1117;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ─── Fields ──────────────────────────────────────── */
+.editor-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 20px;
+}
+
+.editor-global .editor-field,
+.editor-section-body .editor-field {
+  padding: 0;
+}
+
+.editor-global .editor-field {
+  padding: 4px 20px;
+}
+
+.editor-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #8b949e;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.editor-input,
+.editor-textarea {
+  background: #21262d;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  color: #e6edf3;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-size: 0.88rem;
+  padding: 8px 10px;
+  transition: border-color 0.2s;
+  width: 100%;
+  resize: vertical;
+}
+.editor-input:focus,
+.editor-textarea:focus {
+  outline: none;
+  border-color: #C49A45;
+}
+.editor-textarea { line-height: 1.5; }
+
+/* ─── Actions ─────────────────────────────────────── */
+.editor-actions {
+  display: flex;
+  gap: 10px;
+  padding: 16px 20px;
+  border-top: 1px solid #30363d;
+  background: #1c2128;
+}
+
+.editor-btn-export {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: #C49A45;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.editor-btn-export:hover { background: #a87b2a; }
+
+.editor-btn-reset {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 14px;
+  background: #21262d;
+  color: #8b949e;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.editor-btn-reset:hover { background: #da3633; color: #fff; border-color: #da3633; }
+
+/* ─── Preview ─────────────────────────────────────── */
+.editor-preview {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #fff;
+}
+
+.editor-preview-content {
+  flex: 1;
+  overflow-y: auto;
+  position: relative;
+}
+
+.editor-preview-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: #1c2128;
+  border-bottom: 1px solid #30363d;
+  flex-shrink: 0;
+}
+
+.editor-preview-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #e6edf3;
+}
+
+.editor-preview-hint {
+  font-size: 0.75rem;
+  color: #8b949e;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.editor-preview-hint::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #3fb950;
+  border-radius: 50%;
+}
+
+.editor-iframe {
+  flex: 1;
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+
+/* ─── Export Modal ────────────────────────────────── */
+.editor-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.editor-modal {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 28px;
+  max-width: 800px;
+  width: 100%;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.editor-modal-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #e6edf3;
+}
+
+.editor-modal-hint {
+  font-size: 0.85rem;
+  color: #8b949e;
+  line-height: 1.5;
+}
+.editor-modal-hint code {
+  background: #21262d;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #C49A45;
+  font-size: 0.82rem;
+}
+
+.editor-modal-code {
+  flex: 1;
+  overflow-y: auto;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 16px;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: #e6edf3;
+  white-space: pre;
+  font-family: 'Fira Code', 'Cascadia Code', monospace;
+}
+
+.editor-modal-actions {
+  display: flex;
+  gap: 10px;
+}

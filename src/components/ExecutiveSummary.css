@@ -128,6 +128,7 @@
   line-height: 1.8;
   color: var(--text-secondary);
   margin-bottom: 20px;
+  white-space: pre-wrap;
 }
 
 .summary-footer {
@@ -168,6 +169,11 @@
     text-align: center;
   }
   
+  .summary-visuals, .visual-circle-accent {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
   .summary-content {
     padding-left: 0;
   }
@@ -188,11 +194,21 @@
     width: 220px;
     height: 220px;
   }
+  .intro-image-main {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    position: relative;
+    border-radius: 4px;
+  }
   .visual-circle-accent {
     width: 140px;
     height: 140px;
     border-width: 6px;
     right: 20px;
+    opacity: 1 !important;
+    transform: none !important;
   }
   .placeholder-inner-square {
     width: 80px;

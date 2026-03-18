@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Pencil } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { proposalData } from './data/proposalData'
+import { Link } from 'react-router-dom'
+import { useEditor } from './context/EditorContext'
 import Hero from './components/Hero'
 import ExecutiveSummary from './components/ExecutiveSummary'
 import PerformanceOverview from './components/PerformanceOverview'
@@ -34,7 +35,8 @@ const ComponentMap = {
   AboutCompany
 };
 
-function App() {
+function App({ hideEditButton }) {
+  const { data: proposalData } = useEditor()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
@@ -123,12 +125,51 @@ function App() {
           if (!Component) return <div key={index} style={{color: 'red'}}>Component {section.type} not found.</div>;
           
           return (
-            <div key={index} id={section.id}>
+            <div 
+              key={index} 
+              id={section.id}
+              style={{ 
+                paddingTop: section.data.paddingTop ? `${section.data.paddingTop}px` : undefined,
+                paddingBottom: section.data.paddingBottom ? `${section.data.paddingBottom}px` : undefined,
+                paddingLeft: section.data.paddingLeft ? `${section.data.paddingLeft}px` : undefined,
+                paddingRight: section.data.paddingRight ? `${section.data.paddingRight}px` : undefined
+              }}
+            >
               <Component data={section.data} agencyName={proposalData.agency.name} />
             </div>
           );
         })}
       </main>
+
+      {/* Floating Edit Button */}
+      {!hideEditButton && (
+        <Link
+          to="/editor"
+          style={{
+            position: 'fixed',
+            bottom: '24px',
+            right: '24px',
+            zIndex: 999,
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            padding: '12px 20px',
+            background: 'var(--accent-secondary)',
+            color: '#fff',
+            borderRadius: '50px',
+            fontFamily: 'var(--font-main)',
+            fontWeight: 700,
+            fontSize: '0.9rem',
+            textDecoration: 'none',
+            boxShadow: '0 4px 20px rgba(196,154,69,0.4)',
+            transition: 'transform 0.2s, box-shadow 0.2s',
+          }}
+          onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 8px 30px rgba(196,154,69,0.5)'; }}
+          onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = '0 4px 20px rgba(196,154,69,0.4)'; }}
+        >
+          <Pencil size={16} /> Edit Proposal
+        </Link>
+      )}
     </div>
   )
 }

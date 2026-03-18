@@ -4,16 +4,22 @@ import './FeatureSection.css';
 
 const FeatureSection = ({ data }) => {
   const isReversed = data.imagePosition === 'right';
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
 
   return (
     <section className={`section feature-section ${isReversed ? 'bg-secondary' : 'bg-primary'}`}>
       <div className="container">
-        <div className={`feature-grid ${isReversed ? 'reversed' : ''}`}>
+        <div 
+          className={`feature-grid ${isReversed ? 'reversed' : ''}`}
+          style={{
+            gridTemplateColumns: data.splitRatio ? (isReversed ? `${data.splitRatio}% ${100 - data.splitRatio}%` : `${100 - data.splitRatio}% ${data.splitRatio}%`) : '1fr 1fr'
+          }}
+        >
           
           <motion.div 
             className="feature-visual"
-            initial={{ opacity: 0, x: isReversed ? 30 : -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={isMobile ? {} : { opacity: 0, x: isReversed ? 30 : -30 }}
+            whileInView={isMobile ? {} : { opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.8 }}
           >
@@ -25,22 +31,24 @@ const FeatureSection = ({ data }) => {
                   <LayoutGrid size={48} className="placeholder-icon" />
                 </div>
               )}
-              {/* Optional decorative elements */}
               <div className="decor-dots"></div>
             </div>
           </motion.div>
 
           <motion.div 
             className="feature-content"
-            initial={{ opacity: 0, x: isReversed ? -30 : 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={isMobile ? {} : { opacity: 0, x: isReversed ? -30 : 30 }}
+            whileInView={isMobile ? {} : { opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             {data.eyebrow && <span className="feature-eyebrow">{data.eyebrow}</span>}
             <h2 className="section-title text-primary feature-title">{data.title}</h2>
-            <div className="feature-text">
-              <p>{data.description}</p>
+            <div 
+              className="feature-text"
+              style={{ lineHeight: data.lineHeight || '1.7' }}
+            >
+              <p style={{ lineHeight: 'inherit' }}>{data.description}</p>
             </div>
             
             {data.price && (
