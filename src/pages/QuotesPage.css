@@ -251,6 +251,83 @@
   background: rgba(255,255,255,0.2);
 }
 
+.approval-success-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: rgba(46, 213, 115, 0.1);
+  border: 1px solid rgba(46, 213, 115, 0.3);
+  padding: 24px;
+  border-radius: 16px;
+}
+
+.success-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #2ed573;
+}
+
+.success-header h4 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.success-msg {
+  font-size: 0.9rem;
+  color: #ccc;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.success-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-success-action {
+  background: #2ed573;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-success-action:hover {
+  background: #26af5f;
+}
+
+.btn-success-action.outline {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.btn-success-action.outline:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.btn-success-reset {
+  background: transparent;
+  border: none;
+  color: #888;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.btn-success-reset:hover {
+  color: white;
+}
+
 .next-steps-info {
   margin-top: 32px;
   padding: 0 16px;

@@ -7,12 +7,46 @@ import './QuotesPage.css';
 const QuotesPage = () => {
   const { data: proposalData } = useEditor();
   const [showConfirm, setShowConfirm] = useState(false);
+  const [isApproved, setIsApproved] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const getApprovalText = () => {
+    return `The proposal has been approved. \n\nTotals:\nOnce-off: ${formatCurrency(totals.oneTime)}\nMonthly: ${formatCurrency(totals.monthly)}\n\nNext steps are being initiated.`;
+  };
 
   const handleApprove = () => {
-    const subject = encodeURIComponent(`Proposal Approved: ${proposalData.client?.name || 'PNG Tours'}`);
-    const body = encodeURIComponent(`The proposal has been approved. \n\nTotals:\nOnce-off: ${formatCurrency(totals.oneTime)}\nMonthly: ${formatCurrency(totals.monthly)}\n\nNext steps are being initiated.`);
-    window.location.href = `mailto:francois.bigondigital@gmail.com?subject=${subject}&body=${body}`;
+    const recipient = "francois.bigondigital@gmail.com";
+    const subject = `Proposal Approved: ${proposalData.client?.name || 'PNG Tours'}`;
+    const approvalText = getApprovalText();
+    
+    // Attempt automatic clipboard copy
+    try {
+      navigator.clipboard.writeText(approvalText);
+      setCopied(true);
+    } catch (err) {
+      console.error("Failed to copy:", err);
+    }
+
+    // Trigger original mailto
+    const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(approvalText)}`;
+    window.location.href = mailtoUrl;
+    
+    setIsApproved(true);
     setShowConfirm(false);
+  };
+
+  const handleManualCopy = () => {
+    navigator.clipboard.writeText(getApprovalText());
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  const openGmail = () => {
+    const recipient = "francois.bigondigital@gmail.com";
+    const subject = `Proposal Approved: ${proposalData.client?.name || 'PNG Tours'}`;
+    const approvalText = getApprovalText();
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipient}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(approvalText)}`;
+    window.open(gmailUrl, '_blank');
   };
 
   const pricingSections = useMemo(() => {
@@ -121,7 +155,26 @@ const QuotesPage = () => {
                 <span className="amount">{formatCurrency(totals.oneTime + totals.monthly)}</span>
               </div>
 
-              {!showConfirm ? (
+              {isApproved ? (
+                <div className="approval-success-container glass-panel">
+                  <div className="success-header">
+                    <CheckCircle2 size={32} className="success-icon" />
+                    <h4>Project Approved!</h4>
+                  </div>
+                  <p className="success-msg">Approval details copied to clipboard. If your email didn't open, use the buttons below:</p>
+                  <div className="success-actions">
+                    <button className="btn-success-action" onClick={openGmail}>
+                      Open in Gmail
+                    </button>
+                    <button className="btn-success-action outline" onClick={handleManualCopy}>
+                      {copied ? 'Copied!' : 'Copy to Clipboard'}
+                    </button>
+                  </div>
+                  <button className="btn-success-reset" onClick={() => setIsApproved(false)}>
+                    <ChevronLeft size={16} /> Back
+                  </button>
+                </div>
+              ) : !showConfirm ? (
                 <button className="btn-approve-all" onClick={() => setShowConfirm(true)}>
                   <CheckCircle2 size={20} className="mr-2" /> Approve All & Proceed
                 </button>
