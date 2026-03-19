@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 :root {
+  color-scheme: light;
   /* Colors */
   --bg-color: #ffffff;
   --bg-secondary: #fdfbf7;
@@ -51,6 +52,8 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Force background to be white even if browser tries to force dark mode */
+  background: var(--bg-color) !important;
 }
 
 /* Typography Base */
