@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { motion } from 'framer-motion';
 import { Bot, Sparkles } from 'lucide-react';
 import './AISearch.css';
@@ -39,4 +40,4 @@ const AISearch = ({ data }) => {
   );
 };
 
-export default AISearch;
+export default memo(AISearch);

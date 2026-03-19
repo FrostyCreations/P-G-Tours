@@ -1,3 +1,5 @@
+import { memo } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import './FinalCTA.css';
@@ -17,13 +19,18 @@ const FinalCTA = ({ data }) => {
                <h2 className="cta-title">{data.title}</h2>
                <p className="cta-thankyou">{data.thankYou}</p>
                
-               <motion.button 
-                 className="btn-primary cta-button"
+               <motion.div
                  whileHover={{ scale: 1.05 }}
                  whileTap={{ scale: 0.95 }}
                >
-                 {data.buttonText} <ArrowRight size={24} className="ml-2" />
-               </motion.button>
+                 <Link 
+                   to="/quotes"
+                   className="btn-primary cta-button-link"
+                   style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center' }}
+                 >
+                   {data.buttonText} <ArrowRight size={24} className="ml-2" />
+                 </Link>
+               </motion.div>
             </div>
             
             <div className="cta-decorative-circle"></div>
@@ -34,4 +41,4 @@ const FinalCTA = ({ data }) => {
   );
 };
 
-export default FinalCTA;
+export default memo(FinalCTA);

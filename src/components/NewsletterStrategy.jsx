@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, CalendarDays, CheckCircle } from 'lucide-react';
 import './NewsletterStrategy.css';
@@ -71,4 +72,4 @@ const NewsletterStrategy = ({ data }) => {
   );
 };
 
-export default NewsletterStrategy;
+export default memo(NewsletterStrategy);

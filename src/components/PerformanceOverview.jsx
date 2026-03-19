@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { motion } from 'framer-motion';
 import { MousePointerClick } from 'lucide-react';
 import './PerformanceOverview.css';
@@ -5,8 +6,11 @@ import './PerformanceOverview.css';
 const PerformanceOverview = ({ data }) => {
   return (
     <section id="performance" className="performance-section">
-      <div className="perf-left-image">
-        {/* Placeholder image to mimic the people gathered in Slide 3 */}
+      <div 
+        className="perf-left-image" 
+        style={{ backgroundImage: data.imageUrl ? `url(${data.imageUrl})` : undefined }}
+      >
+        {/* Rendered dynamic image from data.imageUrl */}
       </div>
       <div className="perf-right-content">
          <motion.div 
@@ -55,4 +59,4 @@ const PerformanceOverview = ({ data }) => {
   );
 };
 
-export default PerformanceOverview;
+export default memo(PerformanceOverview);

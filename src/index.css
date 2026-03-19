@@ -92,6 +92,8 @@ ul {
 
 .section {
   padding: var(--section-padding);
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 800px; /* Provides a placeholder size for off-screen sections */
 }
 
 /* Premium Button */

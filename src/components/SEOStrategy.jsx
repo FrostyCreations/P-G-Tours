@@ -1,12 +1,13 @@
+import { memo } from 'react';
 import { motion } from 'framer-motion';
 import { Search, MapPin, Settings } from 'lucide-react';
 import './SEOStrategy.css';
 
 const SEOStrategy = ({ data }) => {
   const icons = [
-    <Settings size={28} />,
-    <MapPin size={28} />,
-    <Search size={28} />
+    <Settings key="settings" size={28} />,
+    <MapPin key="map" size={28} />,
+    <Search key="search" size={28} />
   ];
 
   const containerVariants = {
@@ -81,4 +82,4 @@ const SEOStrategy = ({ data }) => {
   );
 };
 
-export default SEOStrategy;
+export default memo(SEOStrategy);

@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { motion } from 'framer-motion';
 import { TrendingUp, Target, BadgeDollarSign } from 'lucide-react';
 import './PaidMediaResults.css';
@@ -29,6 +30,10 @@ const PaidMediaResults = ({ data }) => {
            <p className="paid-subtitle">Data-driven acquisition campaigns maximizing your budget efficiency.</p>
          </motion.div>
          
+         <div className="paid-media-visual">
+           <img src={data.imageUrl} alt="Paid Media Visual" className="paid-image" loading="lazy" />
+         </div>
+
          <motion.div 
            className="paid-metrics-grid"
            variants={containerVariants}
@@ -73,4 +78,4 @@ const PaidMediaResults = ({ data }) => {
   );
 };
 
-export default PaidMediaResults;
+export default memo(PaidMediaResults);

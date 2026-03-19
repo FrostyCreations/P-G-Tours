@@ -30,14 +30,24 @@ export function EditorProvider({ children }) {
     }
   });
 
+  // Merge derived state
+  const sectionOrder = overrides.sectionOrder || baseData.sections.map(s => s.id);
+  
+  const sections = sectionOrder.map(id => {
+    const baseSection = baseData.sections.find(s => s.id === id);
+    const sectionOverrides = (overrides.sections || {})[id] || {};
+    
+    return {
+      ...baseSection,
+      data: deepMerge(baseSection?.data, sectionOverrides.data || {}),
+    };
+  });
+
   const data = {
     ...baseData,
-    client: deepMerge(baseData.client, overrides.client),
-    hero: deepMerge(baseData.hero, overrides.hero),
-    sections: baseData.sections.map((section, i) => ({
-      ...section,
-      data: deepMerge(section.data, overrides.sections?.[i]?.data),
-    })),
+    client: deepMerge(baseData.client, overrides.client || {}),
+    hero: deepMerge(baseData.hero, overrides.hero || {}),
+    sections: sections
   };
 
   useEffect(() => {
@@ -47,6 +57,21 @@ export function EditorProvider({ children }) {
   const updateField = (path, value) => {
     setOverrides(prev => {
       const next = JSON.parse(JSON.stringify(prev));
+      
+      // Handle special path: ['sections', index, 'data', key]
+      if (path[0] === 'sections' && typeof path[1] === 'number') {
+        const sectionIndex = path[1];
+        const sectionId = data.sections[sectionIndex].id;
+        const key = path[3];
+        
+        if (!next.sections) next.sections = {};
+        if (!next.sections[sectionId]) next.sections[sectionId] = { data: {} };
+        if (!next.sections[sectionId].data) next.sections[sectionId].data = {};
+        
+        next.sections[sectionId].data[key] = value;
+        return next;
+      }
+
       let obj = next;
       for (let i = 0; i < path.length - 1; i++) {
         const key = path[i];
@@ -60,13 +85,29 @@ export function EditorProvider({ children }) {
     });
   };
 
+  const moveSection = (index, direction) => {
+    const newIndex = index + direction;
+    if (newIndex < 0 || newIndex >= sections.length) return;
+
+    setOverrides(prev => {
+      const next = JSON.parse(JSON.stringify(prev));
+      const order = [...(next.sectionOrder || baseData.sections.map(s => s.id))];
+      
+      const [movedId] = order.splice(index, 1);
+      order.splice(newIndex, 0, movedId);
+      
+      next.sectionOrder = order;
+      return next;
+    });
+  };
+
   const resetAll = () => {
     setOverrides({});
     localStorage.removeItem('proposalEditorOverrides');
   };
 
   return (
-    <EditorContext.Provider value={{ data, overrides, updateField, resetAll, baseData }}>
+    <EditorContext.Provider value={{ data, overrides, updateField, moveSection, resetAll, baseData }}>
       {children}
     </EditorContext.Provider>
   );

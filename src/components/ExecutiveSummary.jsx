@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { motion } from 'framer-motion';
 import { Rocket } from 'lucide-react';
 import './ExecutiveSummary.css';
@@ -29,7 +30,7 @@ const ExecutiveSummary = ({ data, agencyName }) => {
                <Rocket size={18} color="#fff" />
              </div>
              {data.image1 ? (
-               <img src={data.image1} alt="Introduction Visual" className="intro-image-main" />
+               <img src={data.image1} alt="Introduction Visual" className="intro-image-main" loading="lazy" />
              ) : (
                <div className="image-placeholder bg-light-gray"></div>
              )}
@@ -43,7 +44,7 @@ const ExecutiveSummary = ({ data, agencyName }) => {
             transition={{ delay: 0.3, duration: 0.6 }}
           >
              {data.image2 ? (
-               <img src={data.image2} alt="Introduction Detail" className="intro-image-accent" />
+               <img src={data.image2} alt="Introduction Detail" className="intro-image-accent" loading="lazy" />
              ) : (
                <div className="placeholder-inner-square bg-gray-solid"></div>
              )}
@@ -111,4 +112,4 @@ const ExecutiveSummary = ({ data, agencyName }) => {
   );
 };
 
-export default ExecutiveSummary;
+export default memo(ExecutiveSummary);

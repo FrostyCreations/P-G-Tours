@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './index.css'
 import App from './App.jsx'
 import EditorPage from './pages/EditorPage.jsx'
+import QuotesPage from './pages/QuotesPage.jsx'
 import { EditorProvider } from './context/EditorContext.jsx'
 
 createRoot(document.getElementById('root')).render(
@@ -11,8 +12,9 @@ createRoot(document.getElementById('root')).render(
     <EditorProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<App />} />
+          <Route path="/" element={<App hideEditButton={true} />} />
           <Route path="/editor" element={<EditorPage />} />
+          <Route path="/quotes" element={<QuotesPage />} />
         </Routes>
       </BrowserRouter>
     </EditorProvider>

@@ -38,7 +38,7 @@
   line-height: 1.6;
 }
 
-.cta-button {
+.cta-button, .cta-button-link {
   font-size: 1.15rem;
   padding: 18px 40px;
   border-radius: 50px;

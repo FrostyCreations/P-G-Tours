@@ -9,23 +9,23 @@ export const proposalData = {
     "name": "P&G Lodge",
     "logoText": "P&G",
     "logoUrl": "/p-g-lodge-logo.png"
-},
+  },
   agency: {
     "name": "Big On Digital",
     "contactEmail": "hello@bigondigital.com"
-},
+  },
   hero: {
     "badge": "PNG Tours",
     "title": "Brand Launch & Marketing Strategy Proposal",
     "subtitle": "Curated experiences for travellers seeking coastal escapes.",
     "heroVideoUrl": "/aerial-view-of-boat-near-beach-mozambique-2026-01-23-00-24-55-utc.mp4"
-},
+  },
   sections: [
     {
       type: 'ExecutiveSummary',
       id: 'intro',
       data: {
-        title: "1. Introduction",
+        title: "Introduction",
         price: "R 5,000",
         quoteUrl: "#",
         content: "PNG Tours is a new travel brand with the advantage of owning its own lodge in Mozambique and operating dedicated shuttle transport.\n\nThis creates a strong foundation for curated travel experiences designed for South African travellers seeking coastal escapes and unique holiday experiences.\n\nThe objective of this proposal is to launch PNG Tours professionally, position the lodge as a desirable destination, and create the marketing infrastructure required to generate consistent tour enquiries.\n\nThe initial focus will be Mozambique lodge packages, allowing the brand to establish credibility and operational momentum before expanding into additional tours across Southern Africa.",
@@ -37,21 +37,20 @@ export const proposalData = {
       type: 'PerformanceOverview',
       id: 'strategy',
       data: {
-        title: "2. Strategy Approach",
-        price: "R 10,000",
-        quoteUrl: "#",
+        title: "Strategy Approach",
         metrics: [
-        {
-                "label": "Establish the brand identity, website, content structure and marketing channels.",
-                "value": "Phase 1",
-                "trend": "Launch"
-        },
-        {
-                "label": "Once packages gain traction, expand the brand's reach and further offerings.",
-                "value": "Phase 2",
-                "trend": "Growth"
-        }
-]
+          {
+            "label": "Establish the brand identity, website, content structure and marketing channels.",
+            "value": "Phase 1",
+            "trend": "Launch"
+          },
+          {
+            "label": "Once packages gain traction, expand the brand's reach and further offerings.",
+            "value": "Phase 2",
+            "trend": "Growth"
+          }
+        ],
+        imageUrl: "/cheerful-men-toasting.jpg"
       }
     },
     {
@@ -69,12 +68,12 @@ export const proposalData = {
       type: 'FeatureSection',
       id: 'brand-visual',
       data: {
-        eyebrow: "3. Brand Visual Guide",
+        eyebrow: "1. Brand Visual Guide",
         title: "Establishing the Aesthetic",
         price: "R 15,000",
         quoteUrl: "#",
         description: "A strong brand identity ensures PNG Tours presents a consistent and professional image across all marketing channels. \n\nWe recommend positioning the brand with the 'Explorer' as the primary archetype and 'Jester' as the secondary. \n\nThis keeps the travel and adventure elements strong, while the Jester supports the fun and energetic personality the owners naturally bring. \n\nThis avoids placing the brand in a highly competitive luxury positioning too early, opting instead for authentic and relatable engagement.",
-        imagePosition: "left",
+        imagePosition: "right",
         imageStyle: "cover",
         imageUrl: "/Mozambique/png_tours_brand_visual_guide.png"
       }
@@ -83,11 +82,11 @@ export const proposalData = {
       type: 'FeatureSection',
       id: 'brand-materials',
       data: {
-        eyebrow: "4. Brand Materials",
+        eyebrow: "2. Brand Materials",
         title: "Professional Collateral",
         price: "R 5,000",
         quoteUrl: "#",
-        description: "Professional brand materials help position PNG Tours as a credible and well-established travel provider. \n\nThis includes items such as quotes, invoices and business cards, ensuring the business presents itself professionally when communicating with travellers and partners.",
+        description: "Professional brand materials help position PNG Tours as a credible and well-established travel provider. \n\nThis includes items such as logo redevelopment,quotes, invoices and business cards, ensuring the business presents itself professionally when communicating with travellers and partners.",
         imagePosition: "left",
         imageUrl: "/Mozambique/front-view-of-a-group-of-multi-ethnic-friends-walk-2026-01-09-09-46-11-utc.jpg"
       }
@@ -96,7 +95,7 @@ export const proposalData = {
       type: 'FeatureSection',
       id: 'foundational-content',
       data: {
-        eyebrow: "5. Foundational Content",
+        eyebrow: "3. Foundational Content",
         title: "Building the Media Library",
         price: "R 18,000",
         quoteUrl: "#",
@@ -109,7 +108,7 @@ export const proposalData = {
       type: 'FeatureSection',
       id: 'package-design',
       data: {
-        eyebrow: "6. Travel Package Design",
+        eyebrow: "4. Travel Package Design",
         title: "Structuring the Experience",
         price: "R 8,000",
         quoteUrl: "#",
@@ -122,7 +121,7 @@ export const proposalData = {
       type: 'FeatureSection',
       id: 'website-design',
       data: {
-        eyebrow: "7. Website Design",
+        eyebrow: "5. Website Design",
         title: "Central Digital Platform",
         price: "R 25,000",
         quoteUrl: "#",
@@ -135,7 +134,7 @@ export const proposalData = {
       type: 'FeatureSection',
       id: 'website-tracking',
       data: {
-        eyebrow: "8. Website Tracking",
+        eyebrow: "6. Website Tracking",
         title: "Data-Driven Insights",
         price: "R 4,000",
         quoteUrl: "#",
@@ -148,7 +147,7 @@ export const proposalData = {
       type: 'FeatureSection',
       id: 'social-optimisation',
       data: {
-        eyebrow: "9. Social Media Channel Optimisation",
+        eyebrow: "7. Social Media Channel Optimisation",
         title: "Refining Your Digital Footprint",
         price: "R 6,500",
         quoteUrl: "#",
@@ -161,7 +160,7 @@ export const proposalData = {
       type: 'FeatureSection',
       id: 'content-planning',
       data: {
-        eyebrow: "10. Content Planning",
+        eyebrow: "8. Content Planning",
         title: "Consistent Online Presence",
         price: "R 5,000",
         quoteUrl: "#",
@@ -174,7 +173,7 @@ export const proposalData = {
       type: 'FeatureSection',
       id: 'social-content-creation',
       data: {
-        eyebrow: "11. Social Media Content Creation",
+        eyebrow: "9. Social Media Content Creation",
         title: "High-Quality Visual Storytelling",
         price: "R 10,000 /mo",
         quoteUrl: "#",
@@ -187,7 +186,7 @@ export const proposalData = {
       type: 'FeatureSection',
       id: 'social-management',
       data: {
-        eyebrow: "12. Social Media Management",
+        eyebrow: "10. Social Media Management",
         title: "Active Community Engagement",
         price: "R 8,500 /mo",
         quoteUrl: "#",
@@ -200,7 +199,7 @@ export const proposalData = {
       type: 'FeatureSection',
       id: 'ad-setup',
       data: {
-        eyebrow: "13. Advertising Setup",
+        eyebrow: "11. Advertising Setup",
         title: "Targeted Infrastructure",
         price: "R 6,000",
         quoteUrl: "#",
@@ -213,13 +212,13 @@ export const proposalData = {
       type: 'FeatureSection',
       id: 'ad-management',
       data: {
-        eyebrow: "14. Advertising Management",
+        eyebrow: "12. Advertising Management",
         title: "Optimized Campaigns",
         price: "R 9,000 /mo",
         quoteUrl: "#",
         description: "Advertising campaigns will be used to generate enquiries and promote specific travel packages. \n\nCampaigns will be monitored and optimised to ensure advertising spend produces measurable interest and leads.",
         imagePosition: "left",
-        imageUrl: "/Mozambique/luxury_travel_ad_campaign.png"
+        imageUrl: "/PG Lead.png"
       }
     },
     {
@@ -232,18 +231,18 @@ export const proposalData = {
         visualTitle: "Expansion Plan",
         visualText: "Unlocking Scale",
         points: [
-        "Tour overview video production",
-        "Google advertising campaigns",
-        "Competitor and market analysis",
-        "Company Profile & Letterhead",
-        "Expanded travel package offerings",
-        "Website expansion and additional destination pages",
-        "Social landing page development",
-        "SEO blog strategy",
-        "Listings and travel directory citations",
-        "Email marketing funnels & Automation",
-        "WhatsApp enquiry automation"
-]
+          "Tour overview video production",
+          "Google advertising campaigns",
+          "Competitor and market analysis",
+          "Company Profile & Letterhead",
+          "Expanded travel package offerings",
+          "Website expansion and additional destination pages",
+          "Social landing page development",
+          "SEO blog strategy",
+          "Listings and travel directory citations",
+          "Email marketing funnels & Automation",
+          "WhatsApp enquiry automation"
+        ]
       }
     },
     {
@@ -261,7 +260,8 @@ export const proposalData = {
       type: 'AboutCompany',
       id: 'about',
       data: {
-        logoImage: "/big-on-digital-logo.png"
+        logoImage: "/big-on-digital-logo.png",
+        linkUrl: "https://www.bigondigital.co.za"
       }
     },
     {
@@ -270,7 +270,7 @@ export const proposalData = {
       data: {
         title: "Next Steps",
         thankYou: "Review and approve the proposal. Finalise package structures and pricing. Begin development of brand and digital platforms. Launch initial marketing activity.",
-        buttonText: "Approve Proposal"
+        buttonText: "View Quotes and Approve"
       }
     }
   ]

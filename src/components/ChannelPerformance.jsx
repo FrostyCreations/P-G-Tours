@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { motion } from 'framer-motion';
 import './ChannelPerformance.css';
 
@@ -50,4 +51,4 @@ const ChannelPerformance = ({ data }) => {
   );
 };
 
-export default ChannelPerformance;
+export default memo(ChannelPerformance);

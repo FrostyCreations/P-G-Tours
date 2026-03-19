@@ -41,12 +41,19 @@ function App({ hideEditButton }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 50);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navLinks = [
     { name: 'Introduction', href: '#intro' },
@@ -82,7 +89,7 @@ function App({ hideEditButton }) {
                 {link.name}
               </a>
             ))}
-            <a href="#contact" className="btn-primary nav-cta">Contact Us</a>
+            <Link to="/quotes" className="btn-primary nav-cta">View Quotes and Approve</Link>
           </nav>
 
           <button 
@@ -113,7 +120,13 @@ function App({ hideEditButton }) {
                 {link.name}
               </a>
             ))}
-            <a href="#contact" className="btn-primary mobile-cta">Contact Us</a>
+            <Link 
+              to="/quotes" 
+              className="btn-primary mobile-cta"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              View Quotes and Approve
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>

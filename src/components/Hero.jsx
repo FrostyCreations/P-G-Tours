@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import './Hero.css';
@@ -58,4 +59,4 @@ const Hero = ({ data }) => {
   );
 };
 
-export default Hero;
+export default memo(Hero);
