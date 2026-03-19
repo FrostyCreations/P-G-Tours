@@ -26,7 +26,7 @@ jobs:
       - name: Deploy to xneelo
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.SFTP_HOST }}
+          server: 197.221.12.110
           username: ${{ secrets.SFTP_USERNAME }}
           password: ${{ secrets.SFTP_PASSWORD }}
           local-dir: ./dist/
