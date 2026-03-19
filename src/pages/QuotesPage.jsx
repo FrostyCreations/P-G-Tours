@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { useEditor } from '../context/EditorContext';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, CheckCircle2, FileText, ArrowRight } from 'lucide-react';
@@ -6,6 +6,14 @@ import './QuotesPage.css';
 
 const QuotesPage = () => {
   const { data: proposalData } = useEditor();
+  const [showConfirm, setShowConfirm] = useState(false);
+
+  const handleApprove = () => {
+    const subject = encodeURIComponent(`Proposal Approved: ${proposalData.client?.name || 'PNG Tours'}`);
+    const body = encodeURIComponent(`The proposal has been approved. \n\nTotals:\nOnce-off: ${formatCurrency(totals.oneTime)}\nMonthly: ${formatCurrency(totals.monthly)}\n\nNext steps are being initiated.`);
+    window.location.href = `mailto:francois.bigondigital@gmail.com?subject=${subject}&body=${body}`;
+    setShowConfirm(false);
+  };
 
   const pricingSections = useMemo(() => {
     return proposalData.sections.filter(section => section.data && section.data.price);
@@ -113,9 +121,23 @@ const QuotesPage = () => {
                 <span className="amount">{formatCurrency(totals.oneTime + totals.monthly)}</span>
               </div>
 
-              <button className="btn-approve-all">
-                <CheckCircle2 size={20} className="mr-2" /> Approve All & Proceed
-              </button>
+              {!showConfirm ? (
+                <button className="btn-approve-all" onClick={() => setShowConfirm(true)}>
+                  <CheckCircle2 size={20} className="mr-2" /> Approve All & Proceed
+                </button>
+              ) : (
+                <div className="approval-confirm-container">
+                  <p className="confirm-text">Confirm project approval?</p>
+                  <div className="confirm-buttons">
+                    <button className="btn-confirm-yes" onClick={handleApprove}>
+                      Yes, Approve
+                    </button>
+                    <button className="btn-confirm-no" onClick={() => setShowConfirm(false)}>
+                      No
+                    </button>
+                  </div>
+                </div>
+              )}
               
               <Link to="/" className="btn-view-all">
                 <FileText size={20} className="mr-2" /> View All Quotes (Proposal)

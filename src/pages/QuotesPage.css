@@ -200,6 +200,57 @@
   background: rgba(255,255,255,0.1);
 }
 
+.approval-confirm-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: rgba(255,255,255,0.05);
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.confirm-text {
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+  color: #ccc;
+}
+
+.confirm-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.btn-confirm-yes, .btn-confirm-no {
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+}
+
+.btn-confirm-yes {
+  background: var(--accent-gold, #c4a47c);
+  color: white;
+}
+
+.btn-confirm-yes:hover {
+  background: #b39369;
+  transform: scale(1.02);
+}
+
+.btn-confirm-no {
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+.btn-confirm-no:hover {
+  background: rgba(255,255,255,0.2);
+}
+
 .next-steps-info {
   margin-top: 32px;
   padding: 0 16px;
