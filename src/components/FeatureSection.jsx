@@ -9,7 +9,7 @@ const FeatureSection = ({ data }) => {
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024;
 
   return (
-    <section className={`section feature-section ${isReversed ? 'bg-secondary' : 'bg-primary'}`}>
+    <section className={`section feature-section ${data.bgColor ? `bg-${data.bgColor}` : (isReversed ? 'bg-secondary' : 'bg-primary')}`}>
       <div className="container">
         <div 
           className={`feature-grid ${isReversed ? 'reversed' : ''}`}

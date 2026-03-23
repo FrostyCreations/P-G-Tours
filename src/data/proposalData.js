@@ -190,6 +190,7 @@ export const proposalData = {
         quoteUrl: "#",
         description: "Effective social media requires more than posting content. \n\nEach platform will be optimised to ensure profiles, messaging and visuals align with the PNG Tours brand while supporting marketing campaigns. \n\nOngoing management will focus on community engagement, responding to enquiries, monitoring performance and refining content per platform to ensure the brand remains active, visible and responsive to potential travellers.\n\n*Note: The price for Social Media Content Creation and Social Media Management is combined into a single quote.*",
         imagePosition: "left",
+        bgColor: "secondary",
         imageUrl: "/Mozambique/laughing-at-piggyback-having-fun-at-beach-2026-01-05-05-24-21-utc.webp"
       }
     },
@@ -203,6 +204,7 @@ export const proposalData = {
         quoteUrl: "#",
         description: "Advertising platforms will be configured to allow targeted marketing campaigns. \n\nThis setup enables the business to promote travel packages to audiences most likely to be interested in Mozambique travel experiences.",
         imagePosition: "right",
+        bgColor: "primary",
         imageUrl: "/Mozambique/luxury_travel_ad_campaign.png"
       }
     },
@@ -216,6 +218,7 @@ export const proposalData = {
         quoteUrl: "#",
         description: "Advertising campaigns will be used to generate enquiries and promote specific travel packages. \n\nCampaigns will be monitored and optimised to ensure advertising spend produces measurable interest and leads.",
         imagePosition: "left",
+        bgColor: "secondary",
         imageUrl: "/PG_Lead.webp"
       }
     },
@@ -251,6 +254,7 @@ export const proposalData = {
         title: "Aliecia Kapp",
         description: "A results-driven, energetic and dedicated Direct Sales Executive with a proven track record of success. Able to quickly adapt and overcome challenges to deliver results that exceed company expectations whilst ensuring customer needs are met effectively. Possesses excellent communication skills and the ability to lead, motivate and influence effectively at all levels within an organisation using effective negotiation techniques and problem solving approaches along with the necessary tenacity and enthusiasm required for success in order to achieve targets and goals. I am looking for a new opportunity within a challenging business environment where my skills will add significant value by creating a mutually beneficial relationship.",
         imagePosition: "right",
+        bgColor: "primary",
         imageUrl: "/aliecia-kapp.jpg"
       }
     },
