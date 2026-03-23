@@ -8,7 +8,7 @@ export const proposalData = {
   client: {
     "name": "P&G Tours",
     "logoText": "P&G",
-    "logoUrl": "p-g-tours-logo.png"
+    "logoUrl": "p-g-lodge-logo.png"
   },
   agency: {
     "name": "Big On Digital",
@@ -252,7 +252,7 @@ export const proposalData = {
       data: {
         eyebrow: "About",
         title: "Aliecia Kapp",
-        description: "A results-driven, energetic and dedicated Direct Sales Executive with a proven track record of success. Able to quickly adapt and overcome challenges to deliver results that exceed company expectations whilst ensuring customer needs are met effectively. Possesses excellent communication skills and the ability to lead, motivate and influence effectively at all levels within an organisation using effective negotiation techniques and problem solving approaches along with the necessary tenacity and enthusiasm required for success in order to achieve targets and goals. I am looking for a new opportunity within a challenging business environment where my skills will add significant value by creating a mutually beneficial relationship.",
+        description: "A results-driven and commercially minded professional with a strong foundation in business development and a growing passion for digital marketing. I bring a strategic approach to client engagement, identifying opportunities for growth and translating them into actionable marketing solutions.\n\nIn collaboration with a digital marketing specialist, I am focused on helping businesses build a strong market presence from the ground up—combining data-driven strategies with practical execution to drive visibility, engagement, and measurable results.\n\nKnown for my energy, adaptability, and client-centric mindset, I am committed to delivering solutions that not only meet expectations but create long-term value and sustainable business growth.",
         imagePosition: "right",
         bgColor: "primary",
         imageUrl: "/aliecia-kapp.jpg"
