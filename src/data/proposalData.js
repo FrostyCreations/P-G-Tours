@@ -95,7 +95,7 @@ export const proposalData = {
       data: {
         eyebrow: "3. Foundational Content",
         title: "Building the Media Library",
-        price: "R 9,500*",
+        price: "R 9,500",
         quoteUrl: "#",
         description: "Travel marketing is highly visual.\n\n As PNG Tours currently does not have sufficient content for marketing, a dedicated content shoot at the lodge is required. \n\nThis shoot will build a professional media library capturing high-quality photography and video of: lodge imagery, surrounding destinations, activities and experiences, and the branded bus. \n\nThis content is essential for fueling the website, social media, and advertising campaigns.",
         imagePosition: "right",
@@ -173,11 +173,11 @@ export const proposalData = {
       data: {
         eyebrow: "9. Social Media Content Creation",
         title: "High-Quality Visual Storytelling",
-        price: "R 2,825 /mo",
+        quoteLabel: "Social Media Content Creation & Management",
+        price: "R 4,320 /mo",
         quoteUrl: "#",
-        description: "Travel marketing relies heavily on high-quality visuals. For Phase 1, our design responsibilities include the creation of the Visual Guide, Brand Materials, Travel Package Designs, and weekly social media post design (4 posts per month). \n\nThese posts will focus on showcasing the lodge, surrounding destinations, and travel experiences while concurrently supporting our broader advertising campaigns.",
+        description: "Travel marketing relies heavily on high-quality visuals. For Phase 1, our design responsibilities include the creation of the Visual Guide, Brand Materials, Travel Package Designs, and weekly social media post design (4 posts per month). \n\nThese posts will focus on showcasing the lodge, surrounding destinations, and travel experiences while concurrently supporting our broader advertising campaigns.\n\nEffective social media requires more than posting content. Each platform will be optimised to ensure profiles, messaging and visuals align with the PNG Tours brand while supporting marketing campaigns. Ongoing management will focus on community engagement, responding to enquiries, monitoring performance and refining content per platform to ensure the brand remains active, visible and responsive to potential travellers.",
         imagePosition: "right",
-        hidePriceBlock: true,
         imageUrl: "/Mozambique/mixed-race-friends-doing-barbecue-and-drinking-alc-2026-01-09-08-35-38-utc.webp"
       }
     },
@@ -187,7 +187,7 @@ export const proposalData = {
       data: {
         eyebrow: "10. Social Media Management",
         title: "Active Community Engagement",
-        price: "R 2,825 /mo",
+        price: null,
         quoteUrl: "#",
         description: "Effective social media requires more than posting content. \n\nEach platform will be optimised to ensure profiles, messaging and visuals align with the PNG Tours brand while supporting marketing campaigns. \n\nOngoing management will focus on community engagement, responding to enquiries, monitoring performance and refining content per platform to ensure the brand remains active, visible and responsive to potential travellers.\n\n*Note: The price for Social Media Content Creation and Social Media Management is combined into a single quote.*",
         imagePosition: "left",

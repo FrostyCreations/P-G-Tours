@@ -10,7 +10,6 @@ const QuotesPage = () => {
   const [showConfirm, setShowConfirm] = useState(false);
   const [isApproved, setIsApproved] = useState(false);
   const [copied, setCopied] = useState(false);
-  const [isSocialLinked, setIsSocialLinked] = useState(true);
 
   const pricingSections = useMemo(() => {
     return proposalData.sections.filter(section => section.data && section.data.price);
@@ -33,9 +32,8 @@ const QuotesPage = () => {
 
   const getApprovalText = () => {
     const selectedItems = pricingSections.filter(s => selectedIds.has(s.id || s.data.title || s.data.eyebrow));
-    const itemsList = selectedItems.map(s => `- ${s.data.title || s.data.eyebrow}: ${s.data.price}`).join('\n');
-    const linkNote = isSocialLinked ? "\n*Note: Social Media Content & Management are bundled into a single R 2,825 fee." : "";
-    return `The following proposal items have been approved:\n\n${itemsList}${linkNote}\n\nTotals:\nOnce-off: ${formatCurrency(totals.oneTime)}\nMonthly: ${formatCurrency(totals.monthly)}\n\nNext steps are being initiated.`;
+    const itemsList = selectedItems.map(s => `- ${stripNumber(s.data.eyebrow) || s.data.title}: ${s.data.price}`).join('\n');
+    return `The following proposal items have been approved:\n\n${itemsList}\n\nTotals:\nOnce-off: ${formatCurrency(totals.oneTime)}\nMonthly: ${formatCurrency(totals.monthly)}\n\nNext steps are being initiated.`;
   };
 
   const handleApprove = () => {
@@ -83,7 +81,6 @@ const QuotesPage = () => {
   const totals = useMemo(() => {
     let oneTime = 0;
     let monthly = 0;
-    let hasLinkedSocialAdded = false;
 
     pricingSections.forEach(section => {
       const id = section.id || section.data.title || section.data.eyebrow;
@@ -92,13 +89,7 @@ const QuotesPage = () => {
       const priceVal = parsePrice(section.data.price);
       const isMonthly = section.data.price.toLowerCase().includes('/mo');
 
-      // Specialized logic for linked monthly items (Social Content & Management share one price)
-      if (isSocialLinked && (id === 'social-content-creation' || id === 'social-management')) {
-        if (!hasLinkedSocialAdded) {
-          monthly += priceVal;
-          hasLinkedSocialAdded = true;
-        }
-      } else if (isMonthly) {
+      if (isMonthly) {
         monthly += priceVal;
       } else {
         oneTime += priceVal;
@@ -106,7 +97,7 @@ const QuotesPage = () => {
     });
 
     return { oneTime, monthly };
-  }, [pricingSections, selectedIds, isSocialLinked]);
+  }, [pricingSections, selectedIds]);
 
   const formatCurrency = (val) => {
     return `R ${val.toLocaleString()}`;
@@ -152,7 +143,7 @@ const QuotesPage = () => {
                   const linkedSocial = isLinkedSocial(id);
                   
                   return (
-                    <tr key={id} className={`${isSelected ? '' : 'deselected'} ${linkedSocial && isSocialLinked ? 'linked-row' : ''}`}>
+                    <tr key={id} className={isSelected ? '' : 'deselected'}>
                       <td>
                         <label className="custom-checkbox">
                           <input 
@@ -166,17 +157,7 @@ const QuotesPage = () => {
                       <td>
                         <div className="section-info">
                           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                            <span className="section-name">{stripNumber(section.data.eyebrow) || section.data.title}</span>
-                            {linkedSocial && (
-                              <button 
-                                className={`linked-toggle-btn ${isSocialLinked ? 'active' : ''}`}
-                                onClick={() => setIsSocialLinked(!isSocialLinked)}
-                                title={isSocialLinked ? "Unlink these sections to charge separately" : "Link these sections to charge a single combined fee"}
-                              >
-                                <FileText size={12} style={{ marginRight: '4px' }} />
-                                {isSocialLinked ? 'Linked Quote' : 'Separate Quote'}
-                              </button>
-                            )}
+                            <span className="section-name">{section.data.quoteLabel || stripNumber(section.data.eyebrow) || section.data.title}</span>
                           </div>
                           {section.data.price.toLowerCase().includes('/mo') && (
                             <span className="billing-tag">Monthly</span>
