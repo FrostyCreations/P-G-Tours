@@ -187,9 +187,9 @@ const QuotesPage = () => {
                         {section.data.price}
                       </td>
                       <td className="text-right">
-                        <Link to={`/#${section.id}`} className="view-details-link">
+                        <a href={section.data.quoteUrl || "#"} target="_blank" rel="noopener noreferrer" className="view-details-link">
                           View Details
-                        </Link>
+                        </a>
                       </td>
                     </tr>
                   );
