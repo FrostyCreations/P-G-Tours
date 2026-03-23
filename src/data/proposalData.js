@@ -82,7 +82,7 @@ export const proposalData = {
       data: {
         eyebrow: "2. Brand Materials",
         title: "Professional Collateral",
-        price: "R 5,000",
+        price: "R 4,595",
         quoteUrl: "#",
         description: "Professional brand materials help position PNG Tours as a credible and well-established travel provider. \n\nThis includes items such as logo redevelopment,quotes, invoices and business cards, ensuring the business presents itself professionally when communicating with travellers and partners.",
         imagePosition: "left",
@@ -160,7 +160,7 @@ export const proposalData = {
       data: {
         eyebrow: "8. Content Planning",
         title: "Consistent Online Presence",
-        price: "R 5,000",
+        price: "R 1,995",
         quoteUrl: "#",
         description: "Consistency is essential when building a new travel brand.\n\n A structured content calendar will guide the creation and scheduling of posts, ensuring the brand maintains an active presence online while highlighting the lodge experience and travel packages.",
         imagePosition: "left",
