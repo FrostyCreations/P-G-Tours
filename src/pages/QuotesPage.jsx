@@ -5,6 +5,24 @@ import { Link } from 'react-router-dom';
 import { ChevronLeft, CheckCircle2, FileText, ArrowRight } from 'lucide-react';
 import './QuotesPage.css';
 
+const formatCurrency = (val) => {
+  return `R ${val.toLocaleString()}`;
+};
+
+const stripNumber = (text) => {
+  if (!text) return "";
+  return text.replace(/^\d+\.\s*/, "");
+};
+
+const parsePrice = (priceStr) => {
+  if (!priceStr) return 0;
+  // Extract numbers, removing currency symbol, commas and any /mo suffix
+  const numericPart = priceStr.replace(/[^\d]/g, '');
+  return parseInt(numericPart, 10) || 0;
+};
+
+const isLinkedSocial = (id) => id === 'social-content-creation' || id === 'social-management';
+
 const QuotesPage = () => {
   const { data: proposalData } = useEditor();
   const [showConfirm, setShowConfirm] = useState(false);
@@ -71,16 +89,21 @@ const QuotesPage = () => {
     window.open(gmailUrl, '_blank');
   };
 
-  const parsePrice = (priceStr) => {
-    if (!priceStr) return 0;
-    // Extract numbers, removing currency symbol, commas and any /mo suffix
-    const numericPart = priceStr.replace(/[^\d]/g, '');
-    return parseInt(numericPart, 10) || 0;
+  const phaseGroups = {
+    month1: ['brand-visual', 'brand-materials', 'foundational-content', 'package-design'],
+    month2: ['website-design', 'website-tracking', 'social-optimisation', 'content-planning', 'ad-setup'],
+    ongoing: ['social-content-creation', 'ad-management']
   };
 
   const totals = useMemo(() => {
     let oneTime = 0;
     let monthly = 0;
+    
+    const breakdown = {
+      month1: { total: 0, items: [] },
+      month2: { total: 0, items: [] },
+      ongoing: { total: 0, items: [] }
+    };
 
     pricingSections.forEach(section => {
       const id = section.id || section.data.title || section.data.eyebrow;
@@ -88,27 +111,29 @@ const QuotesPage = () => {
 
       const priceVal = parsePrice(section.data.price);
       const isMonthly = section.data.price.toLowerCase().includes('/mo');
+      const label = section.data.quoteLabel || stripNumber(section.data.eyebrow) || section.data.title;
 
       if (isMonthly) {
         monthly += priceVal;
       } else {
         oneTime += priceVal;
       }
+
+      // Phase breakdown
+      if (phaseGroups.month1.includes(id)) {
+        breakdown.month1.total += priceVal;
+        breakdown.month1.items.push(label);
+      } else if (phaseGroups.month2.includes(id)) {
+        breakdown.month2.total += priceVal;
+        breakdown.month2.items.push(label);
+      } else if (phaseGroups.ongoing.includes(id)) {
+        breakdown.ongoing.total += priceVal;
+        breakdown.ongoing.items.push(label);
+      }
     });
 
-    return { oneTime, monthly };
+    return { oneTime, monthly, breakdown };
   }, [pricingSections, selectedIds]);
-
-  const formatCurrency = (val) => {
-    return `R ${val.toLocaleString()}`;
-  };
-
-  const stripNumber = (text) => {
-    if (!text) return "";
-    return text.replace(/^\d+\.\s*/, "");
-  };
-
-  const isLinkedSocial = (id) => id === 'social-content-creation' || id === 'social-management';
 
   return (
     <div className="quotes-page">
@@ -187,21 +212,68 @@ const QuotesPage = () => {
 
           <div className="quotes-summary-sidebar">
             <div className="summary-card glass-panel dark">
-              <h3>Total Investment</h3>
-              <div className="summary-row">
-                <span>Once-off Setup:</span>
-                <span className="amount">{formatCurrency(totals.oneTime)}</span>
-              </div>
-              {totals.monthly > 0 && (
-                <div className="summary-row monthly">
-                  <span>Monthly Management:</span>
-                  <span className="amount">{formatCurrency(totals.monthly)} /mo</span>
+              <h3 className="summary-title">Total Investment</h3>
+              
+              <div className="summary-rollout">
+                {/* Phase 1 */}
+                <div className="summary-phase">
+                  <span className="phase-label">PHASE 1: BRAND & LAUNCH</span>
+                  
+                  {totals.breakdown.month1.total > 0 && (
+                    <div className="summary-phase-month">
+                      <div className="phase-month-header">
+                        <span>Month 1 – Brand & Foundation</span>
+                        <span className="amount">{formatCurrency(totals.breakdown.month1.total)}</span>
+                      </div>
+                      <ul className="phase-item-list">
+                        {totals.breakdown.month1.items.map(item => <li key={item}>{item}</li>)}
+                      </ul>
+                    </div>
+                  )}
+
+                  {totals.breakdown.month2.total > 0 && (
+                    <div className="summary-phase-month">
+                      <div className="phase-month-header">
+                        <span>Month 2 – Website & Platform</span>
+                        <span className="amount">{formatCurrency(totals.breakdown.month2.total)}</span>
+                      </div>
+                      <ul className="phase-item-list">
+                        {totals.breakdown.month2.items.map(item => <li key={item}>{item}</li>)}
+                      </ul>
+                    </div>
+                  )}
                 </div>
-              )}
+
+                <div className="summary-divider"></div>
+
+                {/* Phase 2 */}
+                <div className="summary-phase">
+                  <span className="phase-label">PHASE 2: ONGOING GROWTH</span>
+                  
+                  {totals.breakdown.ongoing.total > 0 && (
+                    <div className="summary-phase-month">
+                      <div className="phase-month-header">
+                        <span>Month 3 & Ongoing</span>
+                        <span className="amount">{formatCurrency(totals.breakdown.ongoing.total)} /mo</span>
+                      </div>
+                      <ul className="phase-item-list">
+                        {totals.breakdown.ongoing.items.map(item => <li key={item}>{item}</li>)}
+                        <li className="ad-spend-item">+ R 6,000 recommended ad spend</li>
+                      </ul>
+                      <p className="phase-terms">Subject to initial 3-month agreement, thereafter month-to-month.</p>
+                    </div>
+                  )}
+                </div>
+              </div>
+
               <div className="summary-divider"></div>
               <div className="summary-row total">
-                <span>Grand Total (Excl. VAT):</span>
-                <span className="amount">{formatCurrency(totals.oneTime + totals.monthly)}</span>
+                <span>Total Project Setup:</span>
+                <span className="amount">{formatCurrency(totals.oneTime)}</span>
+              </div>
+              <div className="summary-row total-accent">
+                <span>Grand Total (First Month):</span>
+                <span className="amount">{formatCurrency(totals.breakdown.month1.total)}</span>
               </div>
 
               {isApproved ? (
@@ -253,58 +325,6 @@ const QuotesPage = () => {
                 <li>Onboarding session to be scheduled within 48h.</li>
                 <li>Development of digital foundations begins.</li>
               </ul>
-            </div>
-          </div>
-        </div>
-
-        <div className="rollout-section">
-          <h2 className="rollout-title">Investment Overview & Rollout</h2>
-          <div className="rollout-grid">
-            {/* Month 1 */}
-            <div className="rollout-card glass-panel">
-              <span className="rollout-month">Phase 1: Brand & Launch</span>
-              <h3 className="rollout-phase">Month 1 – Brand & Foundation</h3>
-              <div className="rollout-price">R 22,585</div>
-              <p className="rollout-desc">Establish the PNG Tours brand and prepare all core marketing assets.</p>
-              <ul className="rollout-items">
-                <li className="rollout-item"><CheckCircle2 size={16} /> Brand Visual Guide</li>
-                <li className="rollout-item"><CheckCircle2 size={16} /> Brand Materials (CI Pack)</li>
-                <li className="rollout-item"><CheckCircle2 size={16} /> Travel Package Design</li>
-                <li className="rollout-item"><CheckCircle2 size={16} /> Foundational Content Shoot</li>
-              </ul>
-            </div>
-
-            {/* Month 2 */}
-            <div className="rollout-card glass-panel">
-              <span className="rollout-month">Phase 1: Brand & Launch</span>
-              <h3 className="rollout-phase">Month 2 – Website & Platform</h3>
-              <div className="rollout-price">R 21,450</div>
-              <p className="rollout-desc">Build and launch the digital platforms required to start generating enquiries.</p>
-              <ul className="rollout-items">
-                <li className="rollout-item"><CheckCircle2 size={16} /> Website Design</li>
-                <li className="rollout-item"><CheckCircle2 size={16} /> Analytics & Tracking</li>
-                <li className="rollout-item"><CheckCircle2 size={16} /> Social Setup & Optimisation</li>
-                <li className="rollout-item"><CheckCircle2 size={16} /> Content Planner Setup</li>
-                <li className="rollout-item"><CheckCircle2 size={16} /> Meta Business & Ads Setup</li>
-              </ul>
-            </div>
-
-            {/* Phase 2 */}
-            <div className="rollout-card glass-panel">
-              <span className="rollout-month">Phase 2: Ongoing Growth</span>
-              <h3 className="rollout-phase">Month 3 & Ongoing</h3>
-              <div className="rollout-price">R 7,315 <span style={{fontSize: '0.9rem', color: '#888'}}>/mo</span></div>
-              <p className="rollout-desc">Ongoing marketing to build visibility, generate enquiries and grow bookings.</p>
-              <ul className="rollout-items">
-                <li className="rollout-item"><CheckCircle2 size={16} /> Social Content & Management</li>
-                <li className="rollout-item"><CheckCircle2 size={16} /> Monthly Video Content (Reel)</li>
-                <li className="rollout-item"><CheckCircle2 size={16} /> Advertising Management</li>
-                <li className="rollout-item"><CheckCircle2 size={16} /> Platform Optimisation</li>
-              </ul>
-              <div className="rollout-note">
-                <p>+ R 6,000 recommended ad spend</p>
-                <p style={{marginTop: '0.5rem', fontSize: '0.75rem'}}>Subject to initial 3-month agreement, thereafter month-to-month.</p>
-              </div>
             </div>
           </div>
         </div>
