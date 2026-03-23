@@ -26,8 +26,6 @@ export const proposalData = {
       id: 'intro',
       data: {
         title: "Introduction",
-        price: "R 5,000",
-        quoteUrl: "#",
         content: "PNG Tours is a new travel brand with the advantage of owning its own lodge in Mozambique and operating dedicated shuttle transport.\n\nThis creates a strong foundation for curated travel experiences designed for South African travellers seeking coastal escapes and unique holiday experiences.\n\nThe objective of this proposal is to launch PNG Tours professionally, position the lodge as a desirable destination, and create the marketing infrastructure required to generate consistent tour enquiries.\n\nThe initial focus will be Mozambique lodge packages, allowing the brand to establish credibility and operational momentum before expanding into additional tours across Southern Africa.",
         image1: "/Mozambique/beautiful-sunset-on-the-beach-in-watamu-blue-bay-2026-01-09-14-26-51-utc.webp",
         image2: "/Mozambique/crystal-clear-emerald-ocean-water-2026-01-13-18-42-34-utc.webp"
