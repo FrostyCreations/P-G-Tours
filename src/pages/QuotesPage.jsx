@@ -50,9 +50,7 @@ const QuotesPage = () => {
   };
 
   const getApprovalText = () => {
-    const selectedItems = pricingSections.filter(s => selectedIds.has(s.id || s.data.title || s.data.eyebrow));
-    const itemsList = selectedItems.map(s => `- ${stripNumber(s.data.eyebrow) || s.data.title}`).join('\n');
-    return `The following proposal items have been approved:\n\n${itemsList}\n\nNext steps are being initiated.`;
+    return "";
   };
 
   const handleApprove = () => {
