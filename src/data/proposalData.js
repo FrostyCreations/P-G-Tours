@@ -173,7 +173,7 @@ export const proposalData = {
       data: {
         eyebrow: "9. Social Media Content Creation",
         title: "High-Quality Visual Storytelling",
-        price: "R 10,000 /mo",
+        price: "R 2,825 /mo",
         quoteUrl: "#",
         description: "Travel marketing relies heavily on high-quality visuals. For Phase 1, our design responsibilities include the creation of the Visual Guide, Brand Materials, Travel Package Designs, and weekly social media post design (4 posts per month). \n\nThese posts will focus on showcasing the lodge, surrounding destinations, and travel experiences while concurrently supporting our broader advertising campaigns.",
         imagePosition: "right",
@@ -212,7 +212,7 @@ export const proposalData = {
       data: {
         eyebrow: "12. Advertising Management",
         title: "Optimized Campaigns",
-        price: "R 9,000 /mo",
+        price: "R 2,995 /mo",
         quoteUrl: "#",
         description: "Advertising campaigns will be used to generate enquiries and promote specific travel packages. \n\nCampaigns will be monitored and optimised to ensure advertising spend produces measurable interest and leads.",
         imagePosition: "left",
