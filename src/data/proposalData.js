@@ -6,9 +6,9 @@ import logoImg from '../assets/PG Tour.png';
 
 export const proposalData = {
   client: {
-    "name": "P&G Lodge",
+    "name": "P&G Tours",
     "logoText": "P&G",
-    "logoUrl": "/p-g-lodge-logo.png"
+    "logoUrl": "/p-g-tours-logo.png"
   },
   agency: {
     "name": "Big On Digital",

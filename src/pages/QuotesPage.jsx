@@ -51,8 +51,8 @@ const QuotesPage = () => {
 
   const getApprovalText = () => {
     const selectedItems = pricingSections.filter(s => selectedIds.has(s.id || s.data.title || s.data.eyebrow));
-    const itemsList = selectedItems.map(s => `- ${stripNumber(s.data.eyebrow) || s.data.title}: ${s.data.price}`).join('\n');
-    return `The following proposal items have been approved:\n\n${itemsList}\n\nTotals:\nOnce-off: ${formatCurrency(totals.oneTime)}\nMonthly: ${formatCurrency(totals.monthly)}\n\nNext steps are being initiated.`;
+    const itemsList = selectedItems.map(s => `- ${stripNumber(s.data.eyebrow) || s.data.title}`).join('\n');
+    return `The following proposal items have been approved:\n\n${itemsList}\n\nNext steps are being initiated.`;
   };
 
   const handleApprove = () => {
@@ -232,6 +232,8 @@ const QuotesPage = () => {
                     </div>
                   )}
 
+                  <div className="summary-divider"></div>
+
                   {totals.breakdown.month2.total > 0 && (
                     <div className="summary-phase-month">
                       <div className="phase-month-header">
@@ -249,7 +251,7 @@ const QuotesPage = () => {
 
                 {/* Phase 2 */}
                 <div className="summary-phase">
-                  <span className="phase-label">PHASE 2: ONGOING GROWTH</span>
+                  
                   
                   {totals.breakdown.ongoing.total > 0 && (
                     <div className="summary-phase-month">
@@ -268,14 +270,6 @@ const QuotesPage = () => {
               </div>
 
               <div className="summary-divider"></div>
-              <div className="summary-row total">
-                <span>Total Project Setup:</span>
-                <span className="amount">{formatCurrency(totals.oneTime)}</span>
-              </div>
-              <div className="summary-row total-accent">
-                <span>Grand Total (First Month):</span>
-                <span className="amount">{formatCurrency(totals.breakdown.month1.total)}</span>
-              </div>
 
               {isApproved ? (
                 <div className="approval-success-container glass-panel">
@@ -315,7 +309,7 @@ const QuotesPage = () => {
               )}
               
               <Link to="/" className="btn-view-all">
-                <FileText size={20} className="mr-2" /> View All Quotes (Proposal)
+                <FileText size={20} className="mr-2" /> Return to Proposal
               </Link>
             </div>
 
@@ -323,7 +317,7 @@ const QuotesPage = () => {
               <h4>Next Steps After Approval:</h4>
               <ul>
                 <li>Invoice will be generated for setup fees.</li>
-                <li>Onboarding session to be scheduled within 48h.</li>
+                <li>Onboarding session to be scheduled.</li>
                 <li>Development of digital foundations begins.</li>
               </ul>
             </div>
