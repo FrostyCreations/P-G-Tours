@@ -1,6 +1,7 @@
 import { memo } from 'react';
 import { motion } from 'framer-motion';
 import { Rocket } from 'lucide-react';
+import OptimizedImage from './OptimizedImage';
 import './ExecutiveSummary.css';
 
 const ExecutiveSummary = ({ data, agencyName }) => {
@@ -29,11 +30,11 @@ const ExecutiveSummary = ({ data, agencyName }) => {
              <div className="floating-badge">
                <Rocket size={18} color="#fff" />
              </div>
-             {data.image1 ? (
-               <img src={data.image1} alt="Introduction Visual" className="intro-image-main" loading="lazy" />
-             ) : (
-               <div className="image-placeholder bg-light-gray"></div>
-             )}
+              {data.image1 ? (
+                <OptimizedImage src={data.image1} alt="Introduction Visual" className="intro-image-main" />
+              ) : (
+                <div className="image-placeholder bg-light-gray"></div>
+              )}
           </div>
           
           <motion.div 
@@ -43,11 +44,11 @@ const ExecutiveSummary = ({ data, agencyName }) => {
             viewport={{ once: true }}
             transition={{ delay: 0.3, duration: 0.6 }}
           >
-             {data.image2 ? (
-               <img src={data.image2} alt="Introduction Detail" className="intro-image-accent" loading="lazy" />
-             ) : (
-               <div className="placeholder-inner-square bg-gray-solid"></div>
-             )}
+              {data.image2 ? (
+                <OptimizedImage src={data.image2} alt="Introduction Detail" className="intro-image-accent" />
+              ) : (
+                <div className="placeholder-inner-square bg-gray-solid"></div>
+              )}
           </motion.div>
         </motion.div>
 

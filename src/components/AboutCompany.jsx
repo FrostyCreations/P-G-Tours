@@ -1,5 +1,6 @@
 import { memo } from 'react';
 import { motion } from 'framer-motion';
+import OptimizedImage from './OptimizedImage';
 import './AboutCompany.css';
 
 const AboutCompany = ({ data }) => {
@@ -20,7 +21,7 @@ const AboutCompany = ({ data }) => {
             className="partnered-link"
           >
             <span className="partnered-text">Partnered with</span>
-            {data.logoImage && <img src={data.logoImage} alt="Partner Logo" className="partnered-logo" loading="lazy" />}
+            {data.logoImage && <OptimizedImage src={data.logoImage} alt="Partner Logo" className="partnered-logo" />}
           </a>
         </motion.div>
       </div>

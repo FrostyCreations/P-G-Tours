@@ -29,8 +29,8 @@ export const proposalData = {
         price: "R 5,000",
         quoteUrl: "#",
         content: "PNG Tours is a new travel brand with the advantage of owning its own lodge in Mozambique and operating dedicated shuttle transport.\n\nThis creates a strong foundation for curated travel experiences designed for South African travellers seeking coastal escapes and unique holiday experiences.\n\nThe objective of this proposal is to launch PNG Tours professionally, position the lodge as a desirable destination, and create the marketing infrastructure required to generate consistent tour enquiries.\n\nThe initial focus will be Mozambique lodge packages, allowing the brand to establish credibility and operational momentum before expanding into additional tours across Southern Africa.",
-        image1: "/Mozambique/beautiful-sunset-on-the-beach-in-watamu-blue-bay-2026-01-09-14-26-51-utc.jpg",
-        image2: "/Mozambique/crystal-clear-emerald-ocean-water-2026-01-13-18-42-34-utc.jpg"
+        image1: "/Mozambique/beautiful-sunset-on-the-beach-in-watamu-blue-bay-2026-01-09-14-26-51-utc.webp",
+        image2: "/Mozambique/crystal-clear-emerald-ocean-water-2026-01-13-18-42-34-utc.webp"
       }
     },
     {
@@ -50,7 +50,7 @@ export const proposalData = {
             "trend": "Growth"
           }
         ],
-        imageUrl: "/cheerful-men-toasting.jpg"
+        imageUrl: "/cheerful_men_toasting.webp"
       }
     },
     {
@@ -61,7 +61,7 @@ export const proposalData = {
         title: "Brand Launch & Digital Foundations",
         description: "This phase focuses on establishing the brand and generating enquiries.\n\n We will build the identity, website, content structure and marketing channels required to begin generating robust leads.",
         imagePosition: "left",
-        imageUrl: "/Mozambique/aerial-view-of-the-sailboat-on-blue-sea-empty-whi-2026-03-16-00-58-36-utc.jpg"
+        imageUrl: "/Mozambique/aerial-view-of-the-sailboat-on-blue-sea-empty-whi-2026-03-16-00-58-36-utc.webp"
       }
     },
     {
@@ -88,7 +88,7 @@ export const proposalData = {
         quoteUrl: "#",
         description: "Professional brand materials help position PNG Tours as a credible and well-established travel provider. \n\nThis includes items such as logo redevelopment,quotes, invoices and business cards, ensuring the business presents itself professionally when communicating with travellers and partners.",
         imagePosition: "left",
-        imageUrl: "/Mozambique/front-view-of-a-group-of-multi-ethnic-friends-walk-2026-01-09-09-46-11-utc.jpg"
+        imageUrl: "/Mozambique/front-view-of-a-group-of-multi-ethnic-friends-walk-2026-01-09-09-46-11-utc.webp"
       }
     },
     {
@@ -114,7 +114,7 @@ export const proposalData = {
         quoteUrl: "#",
         description: "Clear and well-structured travel packages are essential for successful tour marketing. \n\nPackages will be designed to clearly communicate the experience, itinerary, inclusions and value of each trip, making them easy for potential travellers to understand and book. \n\nThese packages will also be designed into digital brochures and marketing materials that can be shared across marketing channels.",
         imagePosition: "left",
-        imageUrl: "/Mozambique/crystal-clear-emerald-ocean-water-2026-01-13-18-42-34-utc.jpg"
+        imageUrl: "/Mozambique/crystal-clear-emerald-ocean-water-2026-01-13-18-42-34-utc.webp"
       }
     },
     {
@@ -153,7 +153,7 @@ export const proposalData = {
         quoteUrl: "#",
         description: "Social media is one of the most influential discovery channels in travel. \n\nExisting platforms will be refined and aligned with the new brand positioning so that profiles, imagery and messaging clearly communicate the PNG Tours experience. \n\nThese channels will serve as an ongoing platform to showcase the lodge, destinations and travel experiences.",
         imagePosition: "right",
-        imageUrl: "/Mozambique/front-view-of-a-group-of-multi-ethnic-friends-walk-2026-01-09-09-46-11-utc.jpg"
+        imageUrl: "/Mozambique/front-view-of-a-group-of-multi-ethnic-friends-walk-2026-01-09-09-46-11-utc.webp"
       }
     },
     {
@@ -166,7 +166,7 @@ export const proposalData = {
         quoteUrl: "#",
         description: "Consistency is essential when building a new travel brand.\n\n A structured content calendar will guide the creation and scheduling of posts, ensuring the brand maintains an active presence online while highlighting the lodge experience and travel packages.",
         imagePosition: "left",
-        imageUrl: "/Mozambique/kids-running-at-the-beach-2026-01-09-12-26-55-utc.jpg"
+        imageUrl: "/Mozambique/kids-running-at-the-beach-2026-01-09-12-26-55-utc.webp"
       }
     },
     {
@@ -179,7 +179,7 @@ export const proposalData = {
         quoteUrl: "#",
         description: "Travel marketing relies heavily on high-quality visuals. For Phase 1, our design responsibilities include the creation of the Visual Guide, Brand Materials, Travel Package Designs, and weekly social media post design (4 posts per month). \n\nThese posts will focus on showcasing the lodge, surrounding destinations, and travel experiences while concurrently supporting our broader advertising campaigns.",
         imagePosition: "right",
-        imageUrl: "/Mozambique/mixed-race-friends-doing-barbecue-and-drinking-alc-2026-01-09-08-35-38-utc.jpg"
+        imageUrl: "/Mozambique/mixed-race-friends-doing-barbecue-and-drinking-alc-2026-01-09-08-35-38-utc.webp"
       }
     },
     {
@@ -192,7 +192,7 @@ export const proposalData = {
         quoteUrl: "#",
         description: "Effective social media requires more than posting content. \n\nEach platform will be optimised to ensure profiles, messaging and visuals align with the PNG Tours brand while supporting marketing campaigns. \n\nOngoing management will focus on community engagement, responding to enquiries, monitoring performance and refining content per platform to ensure the brand remains active, visible and responsive to potential travellers.",
         imagePosition: "left",
-        imageUrl: "/Mozambique/laughing-at-piggyback-having-fun-at-beach-2026-01-05-05-24-21-utc.jpg"
+        imageUrl: "/Mozambique/laughing-at-piggyback-having-fun-at-beach-2026-01-05-05-24-21-utc.webp"
       }
     },
     {
@@ -218,7 +218,7 @@ export const proposalData = {
         quoteUrl: "#",
         description: "Advertising campaigns will be used to generate enquiries and promote specific travel packages. \n\nCampaigns will be monitored and optimised to ensure advertising spend produces measurable interest and leads.",
         imagePosition: "left",
-        imageUrl: "/PG Lead.png"
+        imageUrl: "/PG_Lead.webp"
       }
     },
     {

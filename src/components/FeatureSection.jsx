@@ -1,6 +1,7 @@
 import { memo } from 'react';
 import { motion } from 'framer-motion';
 import { LayoutGrid } from 'lucide-react';
+import OptimizedImage from './OptimizedImage';
 import './FeatureSection.css';
 
 const FeatureSection = ({ data }) => {
@@ -28,7 +29,7 @@ const FeatureSection = ({ data }) => {
           >
             <div className={`feature-image-wrapper ${data.imageStyle || 'standard'}`}>
               {data.imageUrl ? (
-                <img src={data.imageUrl} alt={data.title} className="feature-image" loading="lazy" />
+                <OptimizedImage src={data.imageUrl} alt={data.title} className="feature-image" />
               ) : (
                 <div className="feature-placeholder-image">
                   <LayoutGrid size={48} className="placeholder-icon" />

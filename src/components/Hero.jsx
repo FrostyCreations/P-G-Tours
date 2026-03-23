@@ -14,6 +14,7 @@ const Hero = ({ data }) => {
           loop 
           muted 
           playsInline
+          poster="/Mozambique/aerial-view-of-the-sailboat-on-blue-sea-empty-whi-2026-03-16-00-58-36-utc.webp"
         >
           <source src={data.heroVideoUrl || "https://assets.mixkit.co/videos/preview/mixkit-aerial-view-of-a-tropical-beach-140-large.mp4"} type="video/mp4" />
         </video>
