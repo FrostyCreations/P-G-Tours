@@ -177,6 +177,7 @@ export const proposalData = {
         quoteUrl: "#",
         description: "Travel marketing relies heavily on high-quality visuals. For Phase 1, our design responsibilities include the creation of the Visual Guide, Brand Materials, Travel Package Designs, and weekly social media post design (4 posts per month). \n\nThese posts will focus on showcasing the lodge, surrounding destinations, and travel experiences while concurrently supporting our broader advertising campaigns.",
         imagePosition: "right",
+        hidePriceBlock: true,
         imageUrl: "/Mozambique/mixed-race-friends-doing-barbecue-and-drinking-alc-2026-01-09-08-35-38-utc.webp"
       }
     },

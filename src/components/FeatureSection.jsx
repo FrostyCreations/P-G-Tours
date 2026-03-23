@@ -55,7 +55,7 @@ const FeatureSection = ({ data }) => {
               <p style={{ lineHeight: 'inherit' }}>{data.description}</p>
             </div>
             
-            {data.price && (
+            {data.price && !data.hidePriceBlock && (
               <div className="pricing-block">
                 <div className="pricing-info">
                   <span className="pricing-label">Price:</span>
