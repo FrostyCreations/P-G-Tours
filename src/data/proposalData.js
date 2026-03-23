@@ -69,7 +69,7 @@ export const proposalData = {
         eyebrow: "1. Brand Visual Guide",
         title: "Establishing the Aesthetic",
         price: "R 3,995",
-        quoteUrl: "#",
+        quoteUrl: "https://zohosecurepay.com/books/bigondigital/secure?CEstimateID=2-34bc0b1ac6b266941bf3f29c71c02d183edb2f4b23cffe2efc1d05de7c6c8ae768b5108c09e50dbdf0fc5ac66f7360f79265d3a24d2171e4fbccc4d131aa593211e80a707f5b3196",
         description: "A strong brand identity ensures PNG Tours presents a consistent and professional image across all marketing channels. \n\nWe recommend positioning the brand with the 'Explorer' as the primary archetype and 'Jester' as the secondary. \n\nThis keeps the travel and adventure elements strong, while the Jester supports the fun and energetic personality the owners naturally bring. \n\nThis avoids placing the brand in a highly competitive luxury positioning too early, opting instead for authentic and relatable engagement.",
         imagePosition: "right",
         imageStyle: "cover",
