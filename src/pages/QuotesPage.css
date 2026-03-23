@@ -411,6 +411,92 @@
   background: rgba(255, 255, 255, 0.05);
 }
 
+.summary-card.dark .summary-divider {
+  background: rgba(255, 255, 255, 0.1);
+  margin: 1.5rem 0;
+}
+
+.summary-title {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.summary-rollout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.summary-phase {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.phase-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  letter-spacing: 0.05em;
+  opacity: 0.8;
+}
+
+.summary-phase-month {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.phase-month-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.phase-item-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.phase-item-list li {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.6);
+  padding-left: 0.75rem;
+  position: relative;
+}
+
+.phase-item-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+}
+
+.ad-spend-item {
+  color: var(--accent-color) !important;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+.phase-terms {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-style: italic;
+  margin-top: 0.25rem;
+}
+
+.summary-row.total-accent .amount {
+  color: var(--accent-color);
+  font-size: 1.5rem;
+}
+
 .btn-success-reset {
   background: transparent;
   border: none;

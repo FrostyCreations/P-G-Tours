@@ -83,7 +83,7 @@ export const proposalData = {
         eyebrow: "2. Brand Materials",
         title: "Professional Collateral",
         price: "R 4,595",
-        quoteUrl: "#",
+        quoteUrl: "https://zohosecurepay.com/books/bigondigital/secure?CEstimateID=2-34bc0b1ac6b266944fa5436b8993ac6bb00e1a47c056f15eb9974ae3f47bffd8e8ef9ccdc04dccdbf0fc5ac66f7360f79265d3a24d2171e4fbccc4d131aa593211e80a707f5b3196",
         description: "Professional brand materials help position PNG Tours as a credible and well-established travel provider. \n\nThis includes items such as logo redevelopment,quotes, invoices and business cards, ensuring the business presents itself professionally when communicating with travellers and partners.",
         imagePosition: "left",
         imageUrl: "/Mozambique/front-view-of-a-group-of-multi-ethnic-friends-walk-2026-01-09-09-46-11-utc.webp"
@@ -96,7 +96,7 @@ export const proposalData = {
         eyebrow: "3. Foundational Content",
         title: "Building the Media Library",
         price: "R 9,500",
-        quoteUrl: "#",
+        quoteUrl: "https://zohosecurepay.com/books/bigondigital/secure?CEstimateID=2-34bc0b1ac6b266944fa5436b8993ac6b09368b448d5ffe8376867505a4848181be74873017b481bef0fc5ac66f7360f79265d3a24d2171e4fbccc4d131aa593211e80a707f5b3196",
         description: "Travel marketing is highly visual.\n\n As PNG Tours currently does not have sufficient content for marketing, a dedicated content shoot at the lodge is required. \n\nThis shoot will build a professional media library capturing high-quality photography and video of: lodge imagery, surrounding destinations, activities and experiences, and the branded bus. \n\nThis content is essential for fueling the website, social media, and advertising campaigns.",
         imagePosition: "right",
         imageUrl: "/Mozambique/foundational_content_creation.png"
@@ -109,7 +109,7 @@ export const proposalData = {
         eyebrow: "4. Travel Package Design",
         title: "Structuring the Experience",
         price: "R 4,495",
-        quoteUrl: "#",
+        quoteUrl: "https://zohosecurepay.com/books/bigondigital/secure?CEstimateID=2-34bc0b1ac6b266944fa5436b8993ac6b35d3e85a3a5d0ceb6f0b1a8156bcabc73fdf735ab7301e8af0fc5ac66f7360f79265d3a24d2171e4fbccc4d131aa593211e80a707f5b3196",
         description: "Clear and well-structured travel packages are essential for successful tour marketing. \n\nPackages will be designed to clearly communicate the experience, itinerary, inclusions and value of each trip, making them easy for potential travellers to understand and book. \n\nThese packages will also be designed into digital brochures and marketing materials that can be shared across marketing channels.",
         imagePosition: "left",
         imageUrl: "/Mozambique/crystal-clear-emerald-ocean-water-2026-01-13-18-42-34-utc.webp"
@@ -122,7 +122,7 @@ export const proposalData = {
         eyebrow: "5. Website Design",
         title: "Central Digital Platform",
         price: "R 8,995",
-        quoteUrl: "#",
+        quoteUrl: "https://zohosecurepay.com/books/bigondigital/secure?CEstimateID=2-34bc0b1ac6b266944fa5436b8993ac6b0f02d28595d1aaee3f18a408aaec5f69c30644f9457cc4e5f0fc5ac66f7360f79265d3a24d2171e4fbccc4d131aa593211e80a707f5b3196",
         description: "The website will serve as the central platform for the PNG Tours brand. \n\nIt will showcase the lodge experience, present travel packages clearly, and provide visitors with an easy way to enquire about tours.\n\n A well-designed travel website builds credibility and allows marketing campaigns to direct interested travellers to a professional online presence. \n\nBasic SEO optimisation will ensure the website is structured correctly for search visibility.",
         imagePosition: "right",
         imageUrl: "/Mozambique/png_tours_website_mockup.png"
@@ -135,7 +135,7 @@ export const proposalData = {
         eyebrow: "6. Website Tracking",
         title: "Data-Driven Insights",
         price: "R 2,995",
-        quoteUrl: "#",
+        quoteUrl: "https://zohosecurepay.com/books/bigondigital/secure?CEstimateID=2-34bc0b1ac6b266944fa5436b8993ac6b23509bbfb149e72a0d6238e24f372b8482362e24c32ab0adf0fc5ac66f7360f79265d3a24d2171e4fbccc4d131aa593211e80a707f5b3196",
         description: "Tracking tools will be implemented to monitor website activity and marketing performance. \n\nThis allows the business to understand how visitors discover the brand, which packages attract interest, and where enquiries originate, enabling future marketing decisions to be guided by real data.",
         imagePosition: "left",
         imageUrl: "/Mozambique/travel_analytics_dashboard.png"
@@ -148,7 +148,7 @@ export const proposalData = {
         eyebrow: "7. Social Media Channel Optimisation",
         title: "Refining Your Digital Footprint",
         price: "R 4,975",
-        quoteUrl: "#",
+        quoteUrl: "https://zohosecurepay.com/books/bigondigital/secure?CEstimateID=2-34bc0b1ac6b266944fa5436b8993ac6b61e98fd53cc4aee25d4a7019f03dbfba1a8c66c7bcca8961f0fc5ac66f7360f79265d3a24d2171e4fbccc4d131aa593211e80a707f5b3196",
         description: "Social media is one of the most influential discovery channels in travel. \n\nExisting platforms will be refined and aligned with the new brand positioning so that profiles, imagery and messaging clearly communicate the PNG Tours experience. \n\nThese channels will serve as an ongoing platform to showcase the lodge, destinations and travel experiences.",
         imagePosition: "right",
         imageUrl: "/Mozambique/front-view-of-a-group-of-multi-ethnic-friends-walk-2026-01-09-09-46-11-utc.webp"
@@ -161,7 +161,7 @@ export const proposalData = {
         eyebrow: "8. Content Planning",
         title: "Consistent Online Presence",
         price: "R 1,995",
-        quoteUrl: "#",
+        quoteUrl: "https://zohosecurepay.com/books/bigondigital/secure?CEstimateID=2-34bc0b1ac6b266944fa5436b8993ac6ba499f9a9769d257e749c58ea6396683335b34a156e2804f8f0fc5ac66f7360f79265d3a24d2171e4fbccc4d131aa593211e80a707f5b3196",
         description: "Consistency is essential when building a new travel brand.\n\n A structured content calendar will guide the creation and scheduling of posts, ensuring the brand maintains an active presence online while highlighting the lodge experience and travel packages.",
         imagePosition: "left",
         imageUrl: "/Mozambique/kids-running-at-the-beach-2026-01-09-12-26-55-utc.webp"
@@ -175,7 +175,7 @@ export const proposalData = {
         title: "High-Quality Visual Storytelling",
         quoteLabel: "Social Media Content Creation & Management",
         price: "R 4,320 /mo",
-        quoteUrl: "#",
+        quoteUrl: "https://zohosecurepay.com/books/bigondigital/secure?CEstimateID=2-34bc0b1ac6b266944fa5436b8993ac6bbbd3b022d68c5af03a06d1f38ec6432f6c50771c77124b32f0fc5ac66f7360f79265d3a24d2171e4fbccc4d131aa593211e80a707f5b3196",
         description: "Travel marketing relies heavily on high-quality visuals. For Phase 1, our design responsibilities include the creation of the Visual Guide, Brand Materials, Travel Package Designs, and weekly social media post design (4 posts per month). \n\nThese posts will focus on showcasing the lodge, surrounding destinations, and travel experiences while concurrently supporting our broader advertising campaigns.\n\nEffective social media requires more than posting content. Each platform will be optimised to ensure profiles, messaging and visuals align with the PNG Tours brand while supporting marketing campaigns. Ongoing management will focus on community engagement, responding to enquiries, monitoring performance and refining content per platform to ensure the brand remains active, visible and responsive to potential travellers.",
         imagePosition: "right",
         imageUrl: "/Mozambique/mixed-race-friends-doing-barbecue-and-drinking-alc-2026-01-09-08-35-38-utc.webp"
@@ -188,7 +188,6 @@ export const proposalData = {
         eyebrow: "10. Social Media Management",
         title: "Active Community Engagement",
         price: null,
-        quoteUrl: "#",
         description: "Effective social media requires more than posting content. \n\nEach platform will be optimised to ensure profiles, messaging and visuals align with the PNG Tours brand while supporting marketing campaigns. \n\nOngoing management will focus on community engagement, responding to enquiries, monitoring performance and refining content per platform to ensure the brand remains active, visible and responsive to potential travellers.\n\n*Note: The price for Social Media Content Creation and Social Media Management is combined into a single quote.*",
         imagePosition: "left",
         bgColor: "secondary",
@@ -202,7 +201,7 @@ export const proposalData = {
         eyebrow: "11. Advertising Setup",
         title: "Targeted Infrastructure",
         price: "R 2,490",
-        quoteUrl: "#",
+        quoteUrl: "https://zohosecurepay.com/books/bigondigital/secure?CEstimateID=2-34bc0b1ac6b266944fa5436b8993ac6b00de31d96a8c1f0f8bf2194bee55beb13d899ec1c3a5969cf0fc5ac66f7360f79265d3a24d2171e4fbccc4d131aa593211e80a707f5b3196",
         description: "Advertising platforms will be configured to allow targeted marketing campaigns. \n\nThis setup enables the business to promote travel packages to audiences most likely to be interested in Mozambique travel experiences.",
         imagePosition: "right",
         bgColor: "primary",
@@ -216,7 +215,7 @@ export const proposalData = {
         eyebrow: "12. Advertising Management",
         title: "Optimized Campaigns",
         price: "R 2,995 /mo",
-        quoteUrl: "#",
+        quoteUrl: "https://zohosecurepay.com/books/bigondigital/secure?CEstimateID=2-34bc0b1ac6b266944fa5436b8993ac6b67215e8fe49a550ae298651457cc6d4bb0ee4215650b6521f0fc5ac66f7360f79265d3a24d2171e4fbccc4d131aa593211e80a707f5b3196",
         description: "Advertising campaigns will be used to generate enquiries and promote specific travel packages. \n\nCampaigns will be monitored and optimised to ensure advertising spend produces measurable interest and leads.",
         imagePosition: "left",
         bgColor: "secondary",
