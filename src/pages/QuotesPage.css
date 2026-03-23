@@ -80,6 +80,72 @@
 .quotes-table td {
   padding: 24px 16px;
   border-bottom: 1px solid #f5f5f5;
+  transition: opacity 0.3s, background 0.3s;
+}
+
+.quotes-table tr.deselected td {
+  opacity: 0.5;
+  background: #fafafa;
+}
+
+/* Custom Checkbox */
+.custom-checkbox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  user-select: none;
+}
+
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: -12px;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  background-color: #eee;
+  border-radius: 6px;
+  border: 2px solid #ddd;
+  transition: all 0.2s;
+}
+
+.custom-checkbox:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.custom-checkbox input:checked ~ .checkmark {
+  background-color: var(--accent-gold, #c4a47c);
+  border-color: var(--accent-gold, #c4a47c);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.custom-checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.custom-checkbox .checkmark:after {
+  left: 8px;
+  top: 4px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
 
 .section-info {
@@ -102,6 +168,40 @@
   border-radius: 4px;
   font-weight: 700;
   width: fit-content;
+}
+
+.linked-badge, .linked-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.linked-toggle-btn {
+  background: #f5f5f5;
+  color: #888;
+  border-color: #ddd;
+}
+
+.linked-toggle-btn.active {
+  background: #fff8e1;
+  color: #f57c00;
+  border-color: #ffe082;
+}
+
+.linked-toggle-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.linked-row.deselected {
+  border-left-color: #eee;
 }
 
 .text-right {

@@ -10,9 +10,32 @@ const QuotesPage = () => {
   const [showConfirm, setShowConfirm] = useState(false);
   const [isApproved, setIsApproved] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [isSocialLinked, setIsSocialLinked] = useState(true);
+
+  const pricingSections = useMemo(() => {
+    return proposalData.sections.filter(section => section.data && section.data.price);
+  }, [proposalData]);
+
+  // Track which sections are selected for the quote
+  const [selectedIds, setSelectedIds] = useState(() => {
+    return new Set(pricingSections.map(s => s.id || s.data.title || s.data.eyebrow));
+  });
+
+  const toggleItem = (id) => {
+    const newSelected = new Set(selectedIds);
+    if (newSelected.has(id)) {
+      newSelected.delete(id);
+    } else {
+      newSelected.add(id);
+    }
+    setSelectedIds(newSelected);
+  };
 
   const getApprovalText = () => {
-    return `The proposal has been approved. \n\nTotals:\nOnce-off: ${formatCurrency(totals.oneTime)}\nMonthly: ${formatCurrency(totals.monthly)}\n\nNext steps are being initiated.`;
+    const selectedItems = pricingSections.filter(s => selectedIds.has(s.id || s.data.title || s.data.eyebrow));
+    const itemsList = selectedItems.map(s => `- ${s.data.title || s.data.eyebrow}: ${s.data.price}`).join('\n');
+    const linkNote = isSocialLinked ? "\n*Note: Social Media Content & Management are bundled into a single R 2,825 fee." : "";
+    return `The following proposal items have been approved:\n\n${itemsList}${linkNote}\n\nTotals:\nOnce-off: ${formatCurrency(totals.oneTime)}\nMonthly: ${formatCurrency(totals.monthly)}\n\nNext steps are being initiated.`;
   };
 
   const handleApprove = () => {
@@ -50,10 +73,6 @@ const QuotesPage = () => {
     window.open(gmailUrl, '_blank');
   };
 
-  const pricingSections = useMemo(() => {
-    return proposalData.sections.filter(section => section.data && section.data.price);
-  }, [proposalData]);
-
   const parsePrice = (priceStr) => {
     if (!priceStr) return 0;
     // Extract numbers, removing currency symbol, commas and any /mo suffix
@@ -64,10 +83,22 @@ const QuotesPage = () => {
   const totals = useMemo(() => {
     let oneTime = 0;
     let monthly = 0;
+    let hasLinkedSocialAdded = false;
 
     pricingSections.forEach(section => {
+      const id = section.id || section.data.title || section.data.eyebrow;
+      if (!selectedIds.has(id)) return;
+
       const priceVal = parsePrice(section.data.price);
-      if (section.data.price.toLowerCase().includes('/mo')) {
+      const isMonthly = section.data.price.toLowerCase().includes('/mo');
+
+      // Specialized logic for linked monthly items (Social Content & Management share one price)
+      if (isSocialLinked && (id === 'social-content-creation' || id === 'social-management')) {
+        if (!hasLinkedSocialAdded) {
+          monthly += priceVal;
+          hasLinkedSocialAdded = true;
+        }
+      } else if (isMonthly) {
         monthly += priceVal;
       } else {
         oneTime += priceVal;
@@ -75,11 +106,18 @@ const QuotesPage = () => {
     });
 
     return { oneTime, monthly };
-  }, [pricingSections]);
+  }, [pricingSections, selectedIds, isSocialLinked]);
 
   const formatCurrency = (val) => {
     return `R ${val.toLocaleString()}`;
   };
+
+  const stripNumber = (text) => {
+    if (!text) return "";
+    return text.replace(/^\d+\.\s*/, "");
+  };
+
+  const isLinkedSocial = (id) => id === 'social-content-creation' || id === 'social-management';
 
   return (
     <div className="quotes-page">
@@ -101,32 +139,61 @@ const QuotesPage = () => {
             <table className="quotes-table">
               <thead>
                 <tr>
+                  <th style={{ width: '50px' }}>Select</th>
                   <th>Section</th>
                   <th className="text-right">Investment</th>
                   <th className="text-right">Action</th>
                 </tr>
               </thead>
               <tbody>
-                {pricingSections.map((section, index) => (
-                  <tr key={section.id || index}>
-                    <td>
-                      <div className="section-info">
-                        <span className="section-name">{section.data.title || section.data.eyebrow}</span>
-                        {section.data.price.toLowerCase().includes('/mo') && (
-                          <span className="billing-tag">Monthly</span>
-                        )}
-                      </div>
-                    </td>
-                    <td className="text-right font-bold">
-                      {section.data.price}
-                    </td>
-                    <td className="text-right">
-                      <Link to={`/#${section.id}`} className="view-details-link">
-                        View Details
-                      </Link>
-                    </td>
-                  </tr>
-                ))}
+                {pricingSections.map((section, index) => {
+                  const id = section.id || section.data.title || section.data.eyebrow;
+                  const isSelected = selectedIds.has(id);
+                  const linkedSocial = isLinkedSocial(id);
+                  
+                  return (
+                    <tr key={id} className={`${isSelected ? '' : 'deselected'} ${linkedSocial && isSocialLinked ? 'linked-row' : ''}`}>
+                      <td>
+                        <label className="custom-checkbox">
+                          <input 
+                            type="checkbox" 
+                            checked={isSelected}
+                            onChange={() => toggleItem(id)} 
+                          />
+                          <span className="checkmark"></span>
+                        </label>
+                      </td>
+                      <td>
+                        <div className="section-info">
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                            <span className="section-name">{stripNumber(section.data.eyebrow) || section.data.title}</span>
+                            {linkedSocial && (
+                              <button 
+                                className={`linked-toggle-btn ${isSocialLinked ? 'active' : ''}`}
+                                onClick={() => setIsSocialLinked(!isSocialLinked)}
+                                title={isSocialLinked ? "Unlink these sections to charge separately" : "Link these sections to charge a single combined fee"}
+                              >
+                                <FileText size={12} style={{ marginRight: '4px' }} />
+                                {isSocialLinked ? 'Linked Quote' : 'Separate Quote'}
+                              </button>
+                            )}
+                          </div>
+                          {section.data.price.toLowerCase().includes('/mo') && (
+                            <span className="billing-tag">Monthly</span>
+                          )}
+                        </div>
+                      </td>
+                      <td className="text-right font-bold">
+                        {section.data.price}
+                      </td>
+                      <td className="text-right">
+                        <Link to={`/#${section.id}`} className="view-details-link">
+                          View Details
+                        </Link>
+                      </td>
+                    </tr>
+                  );
+                })}
               </tbody>
             </table>
 
