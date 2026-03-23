@@ -54,6 +54,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   /* Force background to be white even if browser tries to force dark mode */
   background: var(--bg-color) !important;
+  overflow-x: hidden;
 }
 
 /* Typography Base */
