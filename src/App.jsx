@@ -17,6 +17,7 @@ import NewsletterStrategy from './components/NewsletterStrategy'
 import FinalCTA from './components/FinalCTA'
 import FeatureSection from './components/FeatureSection'
 import AboutCompany from './components/AboutCompany'
+import Footer from './components/Footer'
 import './index.css'
 
 const ComponentMap = {
@@ -153,6 +154,7 @@ function App({ hideEditButton }) {
           );
         })}
       </main>
+      <Footer />
 
       {/* Floating Edit Button */}
       {!hideEditButton && (

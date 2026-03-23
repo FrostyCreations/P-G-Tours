@@ -3,6 +3,7 @@ import React, { useMemo, useState } from 'react';
 import { useEditor } from '../context/EditorContext';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, CheckCircle2, FileText, ArrowRight } from 'lucide-react';
+import Footer from '../components/Footer';
 import './QuotesPage.css';
 
 const formatCurrency = (val) => {
@@ -329,6 +330,7 @@ const QuotesPage = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
