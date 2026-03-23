@@ -68,7 +68,7 @@ export const proposalData = {
       data: {
         eyebrow: "1. Brand Visual Guide",
         title: "Establishing the Aesthetic",
-        price: "R 15,000",
+        price: "R 3,995",
         quoteUrl: "#",
         description: "A strong brand identity ensures PNG Tours presents a consistent and professional image across all marketing channels. \n\nWe recommend positioning the brand with the 'Explorer' as the primary archetype and 'Jester' as the secondary. \n\nThis keeps the travel and adventure elements strong, while the Jester supports the fun and energetic personality the owners naturally bring. \n\nThis avoids placing the brand in a highly competitive luxury positioning too early, opting instead for authentic and relatable engagement.",
         imagePosition: "right",
@@ -95,7 +95,7 @@ export const proposalData = {
       data: {
         eyebrow: "3. Foundational Content",
         title: "Building the Media Library",
-        price: "R 18,000",
+        price: "R 9,500*",
         quoteUrl: "#",
         description: "Travel marketing is highly visual.\n\n As PNG Tours currently does not have sufficient content for marketing, a dedicated content shoot at the lodge is required. \n\nThis shoot will build a professional media library capturing high-quality photography and video of: lodge imagery, surrounding destinations, activities and experiences, and the branded bus. \n\nThis content is essential for fueling the website, social media, and advertising campaigns.",
         imagePosition: "right",
@@ -108,7 +108,7 @@ export const proposalData = {
       data: {
         eyebrow: "4. Travel Package Design",
         title: "Structuring the Experience",
-        price: "R 8,000",
+        price: "R 4,495",
         quoteUrl: "#",
         description: "Clear and well-structured travel packages are essential for successful tour marketing. \n\nPackages will be designed to clearly communicate the experience, itinerary, inclusions and value of each trip, making them easy for potential travellers to understand and book. \n\nThese packages will also be designed into digital brochures and marketing materials that can be shared across marketing channels.",
         imagePosition: "left",
@@ -121,7 +121,7 @@ export const proposalData = {
       data: {
         eyebrow: "5. Website Design",
         title: "Central Digital Platform",
-        price: "R 25,000",
+        price: "R 8,995",
         quoteUrl: "#",
         description: "The website will serve as the central platform for the PNG Tours brand. \n\nIt will showcase the lodge experience, present travel packages clearly, and provide visitors with an easy way to enquire about tours.\n\n A well-designed travel website builds credibility and allows marketing campaigns to direct interested travellers to a professional online presence. \n\nBasic SEO optimisation will ensure the website is structured correctly for search visibility.",
         imagePosition: "right",
@@ -134,7 +134,7 @@ export const proposalData = {
       data: {
         eyebrow: "6. Website Tracking",
         title: "Data-Driven Insights",
-        price: "R 4,000",
+        price: "R 2,995",
         quoteUrl: "#",
         description: "Tracking tools will be implemented to monitor website activity and marketing performance. \n\nThis allows the business to understand how visitors discover the brand, which packages attract interest, and where enquiries originate, enabling future marketing decisions to be guided by real data.",
         imagePosition: "left",
@@ -147,7 +147,7 @@ export const proposalData = {
       data: {
         eyebrow: "7. Social Media Channel Optimisation",
         title: "Refining Your Digital Footprint",
-        price: "R 6,500",
+        price: "R 4,975",
         quoteUrl: "#",
         description: "Social media is one of the most influential discovery channels in travel. \n\nExisting platforms will be refined and aligned with the new brand positioning so that profiles, imagery and messaging clearly communicate the PNG Tours experience. \n\nThese channels will serve as an ongoing platform to showcase the lodge, destinations and travel experiences.",
         imagePosition: "right",
@@ -199,7 +199,7 @@ export const proposalData = {
       data: {
         eyebrow: "11. Advertising Setup",
         title: "Targeted Infrastructure",
-        price: "R 6,000",
+        price: "R 2,490",
         quoteUrl: "#",
         description: "Advertising platforms will be configured to allow targeted marketing campaigns. \n\nThis setup enables the business to promote travel packages to audiences most likely to be interested in Mozambique travel experiences.",
         imagePosition: "right",
